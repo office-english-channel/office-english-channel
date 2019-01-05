@@ -1,0 +1,121 @@
+@extends('admin.master')
+
+@section('pagelevelcss')
+@stop
+
+@section('breadcrumb')
+    <li>
+        <a href="{!! URL::route('admin.home') !!}">{!! trans($lang.'breadcrumb_home_lbl') !!}</a>
+    </li>
+    <li>
+        <a href="{!! URL::route('admin.general.footerlinks.index') !!}">{!! trans($lang.'breadcrumb_list_lbl') !!}</a>
+    </li>
+    <li>{!! trans($lang.'breadcrumb_create_lbl') !!}</li>
+@stop
+
+@section('content')
+    <div class="page-content-inner">
+        <div class="mt-content-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light portlet-fit ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-red sbold uppercase">{!! $title !!}</span>
+                            </div>
+                            <div class="actions">
+                                <a href="{!! URL::route('admin.general.footerlinks.index') !!}" class="btn blue-steel btn-outline">
+                                    {!! trans($lang.'back_to_list_btn') !!} 
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            {!! Form::model($record, array('route' => array('admin.general.footerlinks.store'), 'id' => 'add_footerlinks', 'files' => true))  !!}
+                                {!! Form::hidden('id') !!}
+                                @include($view.'partials.form')
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('pageleveljs')
+    <script src="{!! asset('public/adminpanel/global/plugins/jquery-validation/js/jquery.validate.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('public/adminpanel/global/plugins/jquery-validation/js/additional-methods.js') !!}" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+
+            var form1 = $('#add_footerlinks');
+            var error1 = $('.alert-danger', form1);
+            $("#add_footerlinks").validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block help-block-error', // default input error message class
+                invalidHandler: function (event, validator) { //display error alert on form submit
+                    error1.show();
+                    window.scrollTo(error1, -200);
+                },
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                    .closest('.form-group').addClass('has-error'); // set error class to the control group
+                },
+                unhighlight: function (element) { // revert the change done by hightlight
+                    $(element)
+                    .closest('.form-group').removeClass('has-error'); // set error class to the control group
+                },
+                success: function (label) {
+                    label
+                    .closest('.form-group').removeClass('has-error'); // set success class to the control group
+                },
+                rules : {
+                    page_id    : {
+                        required    : true
+                    },
+                    post_category_id    : {
+                        required    : true
+                    },
+                    name    : {
+                        required    : true
+                    },
+                    slug    : {
+                        required    : true
+                    }, 
+                    column_number    : {
+                        required    : true
+                    }
+                },
+                messages : {
+                    page_id    : {
+                        required    : "{!! trans($lang.'page_id_req_err') !!} ",
+                    },
+                    post_category_id    : {
+                        required    : "{!! trans($lang.'post_category_req_err') !!} ",
+                    },
+                    name    : {
+                        required    : "{!! trans($lang.'title_req_err') !!} ",
+                    },slug    : {
+                        required    : "{!! trans($lang.'slug_req_err') !!} ",
+                    }, 
+                    column_number    : {
+                        required    : "{!! trans($lang.'column_number_req_err') !!} ",
+                    }
+                }
+            });
+
+        //code for submit data on enter form controls
+            $('#add_footerlinks').find('input').keypress(function(e) {
+                 if(e.which == 10 || e.which == 13) {
+                      $("#submit_btn").trigger('click');
+                 }
+            });
+        });
+
+    </script>
+@stop
+

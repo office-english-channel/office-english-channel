@@ -1,0 +1,56 @@
+@media (max-width: 1366px){
+	.caption.style-1 h1 { font-size: 50px; line-height: 50px; }
+	.caption.style-1 b { font-size: 28px; line-height: 28px; }
+}
+@media (min-width: 1200px) and (max-width: 1280px){
+	.position-center-x { top: 35%; }
+}
+@media (max-width: 1280px){
+	/*.timeline-area .text-box .left-box { width: 531px; }*/
+}
+@media (max-width: 1024px){
+	.bx-wrapper .bx-controls-direction a { line-height: 32px; text-align: center; }
+	.sidebar ul { height: auto; }
+	.sidebar, .services-text { margin-bottom: 20px; }
+	.aurthor-img { float: none; width: auto; display: table; margin: 0 auto 20px auto; }
+	/*.timeline-area .text-box .left-box { width: 100%; }*/
+	.s-related-products { float: left; width: 100%; }
+	.single-product-detail .btn-list li { margin: 0 0 0 3px; }
+	.recomend-slider .owl-nav .owl-prev { right: 90%; }
+	.recomend-slider .owl-nav .owl-next { left: 90%; }
+}
+@media (max-width: 768px){
+	.upcoming-slider::before { height: 100vh; }
+	.release-thumb li:last-child { display: table !important; margin: 0 auto; }
+	.upcoming-slider { overflow: hidden; padding-bottom: 50px; }
+}
+@media (max-width: 767px){
+	.upcoming-slider::before { height: 100%; }
+	.modal .position-center-center { position: static; transform: initial; }
+	.quick-view .modal-content { width: calc(100% - 30px); margin: 0 auto; padding: 30px; }
+	.modal .close { z-index: 9999; }
+	.collection-content { margin: -10px 0 0 -15px; }
+	.collection-content > ul > li { min-height: 240px; }
+	.img-sld { margin: 0 auto; width: auto; display: block; }
+	.related-product .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar { z-index: 9999; }
+	.related-product .mCSB_scrollTools.mCSB_scrollTools_horizontal { width: 100%; }
+	.tweet-slider .owl-nav .owl-prev, .tweet-slider .owl-nav .owl-next { margin-left: 15px; }
+}
+@media (max-width: 736px){
+	
+}
+@media (max-width: 667px){
+	.caption.style-1 h1 { font-size: 20px; line-height: 20px; }
+	.caption.style-1 b { font-size: 18px; line-height: 18px; }
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 425px){
+	.main-heading { overflow: hidden; }
+}
+@media (max-width: 360px){
+	.collection-content > ul > li { width: 43.4% !important; }
+	.main-slider .owl-nav .owl-prev { left: 15px; }
+	.main-slider .owl-nav .owl-next { right: 15px; }
+}
