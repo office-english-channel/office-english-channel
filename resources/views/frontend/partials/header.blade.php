@@ -37,16 +37,16 @@
                    <a class="page-scroll" href="#gallery">Gallery</a>
                 </li>
                 <li class="dropdown">
-                   <a class="page-scroll" href="achievements.html">Achievements</a>
+                   <a class="page-scroll" href="{!! URL::route('common.achievements') !!}">Achievements</a>
                 </li>
                 <li class="dropdown">
                    <a class="page-scroll" href="#contactus">Contact us</a>
                 </li>
                 <li class="dropdown">
-                  <a class="page-scroll" href="blog.html">Blog</a>
+                  <a class="page-scroll" href="{!! URL::route('common.blogs') !!}">Blog</a>
                 </li>
                 <li class="dropdown">
-                   <a class="page-scroll" href="trialielts.html" target="_blank">Trial IELTS</a>
+                   <a class="page-scroll" href="{!! URL::route('common.trial-ielts') !!}" target="_blank">Trial IELTS</a>
                 </li>
              </ul>
           </div>

@@ -15,4 +15,19 @@ Route::post('/inquiry', [
     'uses'  => 'FrontEnd\HomeController@inquiry'
 ]);
 
+Route::get('/achievements', [
+    'as'    => 'common.achievements',
+    'uses'  => 'FrontEnd\HomeController@achievements'
+]);
+
+Route::get('/blogs', [
+    'as'    => 'common.blogs',
+    'uses'  => 'FrontEnd\HomeController@blogs'
+]);
+
+
+Route::get('/trial-ielts', [
+    'as'    => 'common.trial-ielts',
+    'uses'  => 'FrontEnd\HomeController@trialIELTS'
+]);
 ?>
