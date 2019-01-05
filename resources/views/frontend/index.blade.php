@@ -6,621 +6,216 @@
 
 @section('content')
 
-    <main class="main-content">
-        @include("frontend.partials.slider")
-        
-        <!-- Best Seller Products -->
-        <section class="best-seller tc-padding">
-            <div class="container">
-                
-                <!-- Main Heading -->
-                <div class="main-heading-holder">
-                    <div class="main-heading style-1">
-                        <h2>Best <span class="theme-color">Seller</span> Books</h2>
-                    </div>
-                </div>
-                <!-- Main Heading -->
-
-                <!-- Best sellers Tabs -->
-                <div id="best-sellers-tabs" class="best-sellers-tabs">
-
-                    <!-- Nav tabs -->
-                    <div class="tabs-nav-holder">
-                        <ul class="tabs-nav">
-                            @foreach($category_list as $category_list_value)
-                                @if($category_list_value->id == $category_list_value->categoryProduct['category_id'])
-
-                                    <li><a href="#tab-{{ $category_list_value->id }}">{{ $category_list_value->category_name }}</a></li>
-
-                                @endif
-                            @endforeach
-                        </ul>
-                    </div>
-                    <!-- Nav tabs -->
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-
-                    <!-- Best Seller Slider -->
-                    @foreach($category_list as $category_list_value)
-                    <div id="tab-{{ $category_list_value->id }}">
-                        <div class="best-seller-slider">
-
-                            <!-- Product Box -->
-                            @foreach($vendor_list as $vendor_list_value)
-                                @if($vendor_list_value->category_id == $category_list_value->id)
-                                    <div class="item">
-                                        <div class="product-box">
-                                            <div class="product-img">
-                                                <img src="{{ $vendor_list_value->cover->source }}" alt="">
-                                                <ul class="product-cart-option position-center-x">
-                                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                                                </ul>
-                                                <!-- <span class="sale-bacth">sale</span> -->
-                                            </div>
-                                            <div class="product-detail">
-
-                                                <span>{{ $vendor_list_value->category->category_name }}</span>
-                                                <h5><a href="#" class="myModal" data-toggle="modal" data-target="#myModal" data-vproid="{!! $vendor_list_value->id !!}" data-vcatid="{!! $vendor_list_value->category_id !!}" data-vsubcatid="{!! $vendor_list_value->sub_category_id !!}">{{ $vendor_list_value->vendor_name }}</a></h5>
-                                                <p>{{ $vendor_list_value->summary }}</p>
-                                                <div class="rating-nd-price">
-                                                    <strong>$280.99</strong>
-                                                    <ul class="rating-stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star-half-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="aurthor-detail">
-                                                    <span><img class="user-profile" src="{!! asset('public/frontend/images/logo-1.png') !!}" alt="">Verified by QD</span>
-                                                    <a class="add-wish" href="#"><input type="checkbox" name=""> </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                            <!-- Product Box -->                            
-
-                        </div>
-                    </div>
-                    @endforeach
-                    <!-- Best Seller Slider -->            
-                    
-                </div>
-                <!-- Tab panes -->
-
-                </div>
-                <!-- Best sellers Tabs -->
-
+    <div class="main-container">
+    
+        @include("frontend.partials.slider")      
+         
+        <section class="pd-md bg-light" id="aboutus">
+            <div class="container-fluid">
+               <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-1"></div>
+                <!-- /col-xs-12 col-sm-12 col-md-2 -->
+                  <div class="col-xs-12 col-sm-12 col-md-10 algn-center">
+                    <h3 hidden>About The Company</h3>
+                     <h2 class="und-line"> About</h2>
+                     <p class="head nw-width mb-20 text-justify">
+                       When we realised that Indian youth is frantically looking for the right exposure to gain command over English, we knew what we had to do. We turned ourselves into the channel to bridge the gap; you just have to tune in! Today English is one of the most important tools for economic, academic and social growth. This preference for English all over the world is due to many reasons; first one being the ease with which it can be learnt.
+                      </p>
+                      <p class="head nw-width text-justify">
+                        Yet, Indian youth struggles with it because of the numerous myths surrounding the process of learning. Some of these like ‘Grammar before Language’ or ‘Perfection before Communication’ are strongly challenged here at The English Channel (TEC). In lieu, we share some of the most efficient ways of getting a hang of the language in our experience. We also recognise that like any other language, English too cannot be taught, only learnt! However, what is needed for learning is the kind of exposure that supports growth and provides enough motivation. We swear by making TEC that space. All TEC campuses have been designed to fulfil this mission-
+                        Creating an environment that allows individuals to comfortably gain confidence in the use of English, eventually leading them to achieve all their growth goals We guarantee whoever puts their confidence in TEC is sure to be more confident about their skills in English!
+                     </p>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-1"></div>
+                <!-- /col-xs-12 col-sm-12 col-md-2 -->
+               </div>
+               <!--end of row-->
             </div>
+            <!--end of container-->
         </section>
-        <!-- Best Seller Products -->
-
-        <!-- Add Banners -->
-        <section class="add-banners-holder tc-padding-bottom">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Banner -->
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="add-banner add-banner-1">
-                            <div class="z-inedex-2 p-relative">
-                                <h3>Celebrate the Book Authors</h3>
-                                <p>How to Write a Book Review Request to Bloggers, a guide for authors</p>
-                                <hr>
-                                <strong class="font-merriweather">Buy Now 280.99 <sup>$</sup></strong>
-                            </div>
-                            <img class="adds-book" src="{!! asset('public/frontend/images/add-banners/add-books/img-01.png') !!}" alt="">
-                        </div>
-                    </div>
-                    <!-- Banner -->
-
-                    <!-- Banner -->
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="add-banner add-banner-2">
-                            <div class="z-inedex-2 p-relative">
-                                <strong>Look Books 2016</strong>
-                                <h3>Up to 20% off</h3>
-                                <hr>
-                                <p>of advance enternce exam Books</p>
-                            </div>
-                            <img class="adds-book" src="{!! asset('public/frontend/images/add-banners/add-books/img-02.png') !!}" alt="">
-                        </div>
-                    </div>
-                    <!-- Banner -->
-
+         <!-- Gallery area -->
+        <section class="pd-md bg-pattern" id="gallery">
+           <div class="container">
+              <div class="row mb-2">
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                  <h2 class="und-line">Gallery</h2>
+                  <p class="head">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
                 </div>
-            </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
+                  </a>
+                </div>
+              </div>
+              <!--end of row-->
+           </div>
+           <!--end of container-->
         </section>
-        <!-- Add Banners -->
-
-        <!-- Recomend products -->
-        <div class="recomended-products tc-padding">
-            <div class="container">
-                
-                <!-- Main Heading -->
-                <div class="main-heading-holder">
-                    <div class="main-heading">
-                        <h2>Staff <span class="theme-color">Recomended </span> Books</h2>
-                        <p>Whether you’re a large or small employer, enterpreneur, educational institution, professional</p>
-                    </div>
-                </div>
-                <!-- Main Heading -->
-
-                <!-- Recomend products Slider -->
-                <div class="recomend-slider">
-
-                    <!-- Item -->
-                    <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#open-book-view"><img class="img-sld" src="{!! asset('public/frontend/images/recomended-products/img-01.jpg') !!}" alt=""></a>
-                    </div>
-                    <!-- Item -->
-
-                    <!-- Item -->
-                    <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#open-book-view"><img class="img-sld" src="{!! asset('public/frontend/images/recomended-products/img-02.jpg') !!}" alt=""></a>
-                    </div>
-                    <!-- Item -->
-
-                    <!-- Item -->
-                    <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#open-book-view"><img class="img-sld" src="{!! asset('public/frontend/images/recomended-products/img-03.jpg') !!}" alt=""></a>
-                    </div>
-                    <!-- Item -->
-
-                    <!-- Item -->
-                    <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#open-book-view"><img class="img-sld" src="{!! asset('public/frontend/images/recomended-products/img-04.jpg') !!}" alt=""></a>
-                    </div>
-                    <!-- Item -->
-
-                    <!-- Item -->
-                    <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#open-book-view"><img class="img-sld" src="{!! asset('public/frontend/images/recomended-products/img-05.jpg') !!}" alt=""></a>
-                    </div>
-                    <!-- Item -->
-
-                </div>
-                <!-- Recomend products Slider -->
-
-            </div>
-        </div>
-        <!-- Recomend products -->
-
-        <!-- Book Collections -->
-        <section class="book-collection">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Book Collections Tabs -->
-                    <div id="book-collections-tabs">
-
-                        <!-- collection Name -->
-                        <div class="col-lg-3 col-sm-12">
-                            <div class="sidebar">
-                                <h4>Top Books Catagories</h4>
-                                <ul>
-                                    @foreach($category_list as $category_list_val)
-                                        <li><a href="#cat-{{ $category_list_val->id }}" >{{ $category_list_val->category_name }}</a> </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- collection Name -->
-
-                        <!-- Collection Content -->
-                        <div class="col-lg-9 col-sm-12">
-                            @foreach($category_list as $category_list_val)
-                                <div class="collection" id="cat-{{ $category_list_val->id }}">
-                                    <!-- Secondary heading -->
-                                    <div class="sec-heading">
-                                        <h3>Shop <span class="theme-color">Books</span> Collection</h3>
-                                    </div>
-                                    <!-- Secondary heading -->
- 
-                                    <!-- Collection Content -->
-                                    <div class="collection-content" >
-                                        <ul>                                        
-                                            @foreach($sub_category_list as $sub_category_list_value)
-                                                @if($sub_category_list_value->category_id == $category_list_val->id)
-
-                                                <!-- <input type="hidden" name="cat_in_vendor_id" id="cat_in_vendor_id" value="">
-
-                                                <input type="hidden" name="cat_in_category_id" id="cat_in_category_id" value="{!! $sub_category_list_value->category_id !!}">
-
-                                                <input type="hidden" name="cat_in_sub_category_id" id="cat_in_sub_category_id" value="{!! $sub_category_list_value->id !!}"> -->
-
-                                                    <li id="{{ $category_list_val->id }}">
-                                                        <div class="s-product">
-                                                            <div class="s-product-img">
-                                                                @if($sub_category_list_value->cover->source != '')
-                                                                    <img class="img-thumb-sub-category" src="{{ $sub_category_list_value->cover->source }}">
-                                                                @else
-                                                                    <img class="img-thumb-sub-category" src="{!! asset('public/frontend/images/Beauty-Spa/spa-1.jpg') !!}" alt="">
-                                                                @endif
-
-                                                                <div class="s-product-hover">
-                                                                    <div class="position-center-x">
-                                                                        <a href="#" class="plus-icon"><i class="fa fa-shopping-cart"></i></span>
-                                                                        <a class="btn-1 sm shadow-0" data-toggle="modal" data-target="#quick-view" data-product="" href="#">Quick view</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <h6><a href="#">{{ $sub_category_list_value->sub_category_name }}</a></h6>
-                                                            <span><a href="#" class="btn-1 sm shadow-0 myModalCategory" data-toggle="modal" data-target="#myModalCategory" data-proid="" data-catid="{!! $sub_category_list_value->category_id !!}" data-subcatid="{!! $sub_category_list_value->id !!}">Request Now </a></span>
-                                                        </div>
-                                                    </li>
-                                                @endif  
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <!-- Collection Content -->
-                                </div>
-                            @endforeach
-                        </div>
-                        <!-- Collection Content -->
-
-                    </div>
-                    <!-- Book Collections Tabs -->
-
-                </div>
-            </div>
-        </section>
-        <!-- Book Collections --> 
-
-        <!-- Services -->
-        <section class="services-area tc-padding-bottom">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Services Text -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="services-text"> 
-                            <strong>Our Book Shop Service</strong>
-                            <h3>Bookselling is the commercial <span class="theme-color">Trading of books</span></h3>
-                            <p>Scholars and students spent many hours in these bookshop schools reading, examining, and studying available books . or purchasing favourite selections for their private libraries. 
-                            Book dealers traveled to </p>
-                            <a href="#" class="btn-1 sm shadow-0">Read more<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Services Text -->
-
-                    <!-- Services -->
-                    <div class="col-lg-8 col-xs-12">
-                        <div class="Services">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="service-column">
-                                        <span class="service-icon"><i class="icon-amazing"></i></span>
-                                        <h5><a href="#">Amazing Design Quality</a></h5>
-                                        <p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books using online bookstores agree</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="service-column">
-                                        <span class="service-icon"><i class="icon-intuitive-design"></i></span>
-                                        <h5><a href="#">Intuitive Design</a></h5>
-                                        <p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books using online bookstores agree</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="service-column m-0">
-                                        <span class="service-icon"><i class="icon-responsive"></i></span>
-                                        <h5><a href="#">Responsive</a></h5>
-                                        <p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books using online bookstores agree</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="service-column m-0">
-                                        <span class="service-icon"><i class="icon-seo-optimized"></i></span>
-                                        <h5><a href="#">SEO Optimized</a></h5>
-                                        <p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books using online bookstores agree</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Services -->
-
-                </div>
-            </div>
-        </section>
-        <!-- Services --> 
-
-        <!-- Related Products -->
-        <section class="related-product tc-padding-bottom hori-scroll">
+         <!-- Contact Us -->
+        <section class="algn-center" id="contactus">
           <div class="container">
-
-              <!-- Main Heading -->
-                <div class="main-heading-holder">
-                    <div class="main-heading">
-                        <h2>Bookshop <span class="theme-color">Related</span> Products</h2>
-                        <p>Have a reading loft in my house I will make this happen with</p>
-                    </div>
+             <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                   <h2 class="und-line">Contact Us</h2>
+                   <p class="head">
+                     We have two campuses here in Ahmedabad. Feel free to contact us.
+                   </p>
                 </div>
-                <!-- Main Heading -->
-
-                <!-- Content -->
-              <div class="content scroll-x">
-                <ul>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Business card</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-02.png') !!}" alt="">
-                        <h5><a href="#">Basket Books</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-03.png') !!}" alt="">
-                        <h5><a href="#">Cd Cover</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-04.png') !!}" alt="">
-                        <h5><a href="#">File Folder</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-05.png') !!}" alt="">
-                        <h5><a href="#">Books Rack</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Stationary</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Business card</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-02.png') !!}" alt="">
-                        <h5><a href="#">Basket Books</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-03.png') !!}" alt="">
-                        <h5><a href="#">Cd Cover</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-04.png') !!}" alt="">
-                        <h5><a href="#">File Folder</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-05.png') !!}" alt="">
-                        <h5><a href="#">Books Rack</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Stationary</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Business card</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-02.png') !!}" alt="">
-                        <h5><a href="#">Basket Books</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-03.png') !!}" alt="">
-                        <h5><a href="#">Cd Cover</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-04.png') !!}" alt="">
-                        <h5><a href="#">File Folder</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-05.png') !!}" alt="">
-                        <h5><a href="#">Books Rack</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Stationary</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Business card</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-02.png') !!}" alt="">
-                        <h5><a href="#">Basket Books</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-03.png') !!}" alt="">
-                        <h5><a href="#">Cd Cover</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-04.png') !!}" alt="">
-                        <h5><a href="#">File Folder</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-05.png') !!}" alt="">
-                        <h5><a href="#">Books Rack</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                    <li>
-                            <span class="price"><sup>$</sup>12.00</span>
-                        <img src="{!! asset('public/frontend/images/related-products/img-01.png') !!}" alt="">
-                        <h5><a href="#">Stationary</a></h5>
-                        <ul class="product-cart-option position-center-x">
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-                                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                            </ul>
-                    </li>
-                </ul>
-              </div>
-              <!-- Content -->
-
+             </div>
+             <!--end of row-->
+             <div class="row mt-60">
+              <div class="col-md-12 text-center">
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                  <p class="head-info">089 051 36117</p>
+                </div>
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                  <p class="head-info">Vastrapur<br> Shop1-2 First floor, satellite shopping center, Mansi circle, Vastrapur, Ahmedabad-15.</p>
+                </div>
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                  <p class="head-info"><a href="mailto:register@theenglishchannel.in">register@theenglishchannel.in</a></p>
+                </div>
+              </div><!-- / -->
+             </div><!-- /row -->
+             <div class="row mt-60">
+              <div class="col-md-12 text-center">
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                  <p class="head-info">090 811 81777</p>
+                </div>
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                  <p class="head-info">Ellisbridge<br> 4th Floor, SEWA Building, Opp Karnavati Hospital, Ellisbridge, Ahmedabad-06.</p>
+                </div>
+                <div class="col-sm-4 contact-item">
+                  <span class="font-icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                  <p class="head-info"><a href="mailto:register@theenglishchannel.in">register@theenglishchannel.in</a></p>
+                </div>
+              </div><!-- / -->
+             </div><!-- /row -->
+             <div class="row mt-30" hidden>
+              <div class="col-md-8 col-md-offset-2 mt-40">
+                <form id="contact-form" class="form form-contact">
+                  <div class="col-md-12">
+                    <input id="input-name" name="name" type="text" placeholder="Name*" required="" class="form-control input-md">
+                  </div>
+                  <div class="col-md-6">
+                    <input id="input-email" name="email" type="email" placeholder="Email*" required="" class="form-control input-md">
+                  </div>
+                  <div class="col-md-6">
+                    <input id="input-company" name="company" type="text" placeholder="Company" class="form-control input-md">
+                  </div>
+                  <div class="col-md-12">
+                    <textarea id="input-message" name="message" placeholder="Message*" required="" class="form-control input-md" rows="4"></textarea>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="send-result" class="mt-20"></div>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <a href="#" class="btn btn-outline">Send message</a>
+                  </div>
+                </form>
+              </div><!-- /col-md-8 col-md-offset-2 mt-40 -->
+             </div><!-- /row -->
           </div>
+          <!--end of container-->
         </section>
-        <!-- Related Products --> 
-
-        <!-- Tweet Slider -->
-        <div class="tweet">
-            <div class="container">
-              <div id="tweet-slider" class="tweet-slider">
-                    <div class="item">
-                        <span class="twit-icon"><i class="fa fa-twitter"></i></span>
-                        <p><strong>@jhonrogie</strong> Woohoo! Check out the Twitter Search Plugin I just released with UpThemes! <a href="#"> htttp://upthem.es/twitter</a></p>
-                        <ul>
-                            <li><i class="fa fa-clock-o"></i>45 minutes ago from</li>
-                            <li><i class="fa fa-map-marker"></i>Tower of Terror</li>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <span class="twit-icon"><i class="fa fa-twitter"></i></span>
-                        <p><strong>@jhonrogie</strong> Woohoo! Check out the Twitter Search Plugin I just released with UpThemes! <a href="#"> htttp://upthem.es/twitter</a></p>
-                        <ul>
-                            <li><i class="fa fa-clock-o"></i>45 minutes ago from</li>
-                            <li><i class="fa fa-map-marker"></i>Tower of Terror</li>
-                        </ul>
-                    </div>
+         <!-- map and location -->
+        <section class="map" hidden>
+            <div class="google-map js-active">
+              <div class="map-canvas">
+                <div id="map" style="width:100%;height:500px"></div>
+              </div><!-- /map-canvas -->
+              <div class="map-section">
+                <div class="map-toggle">
+                  <div class="toggle-text alt-font">
+                    <div class="toggle-open">Locate us on map<i class="fa fa-angle-down"></i></div>
+                    <div class="toggle-close" hidden>Close the map<i class="fa fa-angle-up"></i></div>
+                  </div>
+                </div>
               </div>
-            </div>
-        </div>
-        <!-- Tweet Slider -->   
-    </main>
+            </div><!-- /google-map -->
+        </section>
+
+        @include("frontend.partials.footer") 
+
+    </div>
 
 @stop
 

@@ -1,11 +1,5 @@
-<div id="status">
-    <div id="preloader">
-        <div class="preloader position-center-center">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<div class="preloader lds-css ng-scope loader-wrapper">
+	<div style="width:100%;height:100%" class="lds-eclipse">
+		<div></div>
+	</div>
 </div>
-    

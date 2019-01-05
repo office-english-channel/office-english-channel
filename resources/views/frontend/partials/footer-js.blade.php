@@ -1,32 +1,36 @@
-<!-- Java Script -->
-<!-- <script src="{!! asset('public/frontend/js/vendor/jquery.js') !!}"></script>         -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="{!! asset('public/frontend/js/vendor/bootstrap.min.js') !!}"></script>
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="{!! asset('public/frontend/js/gmap3.min.js') !!}"></script>                 
-<script src="{!! asset('public/frontend/js/datepicker.js') !!}"></script>                    
-<script src="{!! asset('public/frontend/js/contact-form.js') !!}"></script>                  
-<script src="{!! asset('public/frontend/js/bigslide.js') !!}"></script>                          
-<script src="{!! asset('public/frontend/js/3d-book-showcase.js') !!}"></script>                  
-<script src="{!! asset('public/frontend/js/turn.js') !!}"></script>                          
-<script src="{!! asset('public/frontend/js/jquery-ui.js') !!}"></script>                             
-<script src="{!! asset('public/frontend/js/mcustom-scrollbar.js') !!}"></script>                 
-<script src="{!! asset('public/frontend/js/timeliner.js') !!}"></script>                 
-<script src="{!! asset('public/frontend/js/parallax.js') !!}"></script>               
-<script src="{!! asset('public/frontend/js/countdown.js') !!}"></script> 
-<script src="{!! asset('public/frontend/js/countTo.js') !!}"></script>       
-<script src="{!! asset('public/frontend/js/owl-carousel.js') !!}"></script>  
-<script src="{!! asset('public/frontend/js/bxslider.js') !!}"></script>  
-<script src="{!! asset('public/frontend/js/appear.js') !!}"></script>                
-<script src="{!! asset('public/frontend/js/sticky.js') !!}"></script>                    
-<script src="{!! asset('public/frontend/js/prettyPhoto.js') !!}"></script>           
-<script src="{!! asset('public/frontend/js/isotope.pkgd.js') !!}"></script>                   
-<script src="{!! asset('public/frontend/js/wow-min.js') !!}"></script>           
-<script src="{!! asset('public/frontend/js/classie.js') !!}"></script>
-<script src="{!! asset('public/frontend/lib/rpage/responsive-paginate.js') !!}"></script>
-<script src="{!! asset('public/frontend/js/main.js') !!}"></script>      
 
-<!-- Switcher JS -->
-<script type="text/javascript" src="{!! asset('public/frontend/switcher/cookie.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('public/frontend/switcher/colorswitcher.js') !!}"></script>
-<!-- Switcher JS -->
+<!-- Bootstrap Core JavaScript -->
+<script src="{!! asset('public/frontend/lib/bootstrap/js/bootstrap.min.js') !!}"></script>
+<!-- Plugin JavaScript -->
+<script src="{!! asset('public/frontend/lib/jquery/jquery.easing.min.js') !!}"></script>
+<script src="{!! asset('public/frontend/lib/parallax/parallax.min.js') !!}"></script>
+<script src="{!! asset('public/frontend/lib/owl-carousel/js/owl.carousel.min.js') !!}"></script>
+<script src="{!! asset('public/frontend/lib/jquery/isotope.pkgd.min.js') !!}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+<script src="{!! asset('public/frontend/lib/lightbox/dist/js/lightbox.min.js') !!}"></script>
+<!-- Template JavaScript -->
+<script src="{!! asset('public/frontend/js/scripts.min.js') !!}"></script>
+<script type="text/javascript">
+$(function(){
+  $('.bxslider').bxSlider({
+    mode: 'fade',
+    auto: true,
+    pager: false,
+    controls: false
+  });
+});
+</script>
+<script type="text/javascript">
+function myMap() {
+    var location = {lat: 23.006257, lng: 72.60255};
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: location,
+    });
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRAatMB3kzBlZs-jYbNhnqRaPmdj98hkQ&callback=myMap"></script>
