@@ -4,17 +4,17 @@
           <div class="col-sm-6">
              <ul class="list-inline">
                 <li>
-                   <a href="#aboutus" class="page-scroll">
+                   <a href="{!! URL::route('common.home') !!}#aboutus" class="page-scroll">
                       <h6>Genesis</h6>
                    </a>
                 </li>
                 <li>
-                   <a href="#contactus" class="page-scroll">
+                   <a href="{!! URL::route('common.home') !!}#contactus" class="page-scroll">
                       <h6>Contact us</h6>
                    </a>
                 </li>
                 <li>
-                   <a href="#" class="page-scroll" href="form.html" target="_blank">
+                   <a href="#" class="page-scroll" href="{!! URL::route('common.trial-ielts') !!}" target="_blank">
                       <h6>Trial IELTS</h6>
                    </a>
                 </li>

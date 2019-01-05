@@ -9,7 +9,6 @@
 <body id="page-top">
 
     @include("frontend.partials.preloader")
-    @include("frontend.partials.header")
     
             @yield('content')
         

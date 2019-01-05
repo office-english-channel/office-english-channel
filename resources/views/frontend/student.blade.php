@@ -1,0 +1,160 @@
+@extends('frontend.master')
+
+@section('pagelevelcss')
+
+@stop
+
+@section('content')
+
+    <div class="nav-container affix" id="mainMenu">
+         <!--start mobile navigation-->
+         <div class="nav nav-sm visible-xs">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-5 col-sm-2 algn-left">
+                     <a href="{!! URL::route('common.home') !!}" >
+                        <!--place for mobile logo-->
+                        <img class="logo" alt="logo" src="{!! asset('public/frontend/img/master-logo.png') !!}">
+                     </a>
+                  </div>
+                  <div class="col-xs-9 col-sm-10 col-xs-7 algn-right">
+                    <a href="#" class="hamburger-toggle" data-toggle-class="#deskNav;hidden-xs">
+                      <i class="material-icons">&#xE3C7;</i>
+                    </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--end navigation-->
+         <!--start desktop navigation-->
+         <nav class="nav nav-sm hidden-xs" id="deskNav">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-2 col-sm-2 hidden-xs text-left">
+                     <a href="{!! URL::route('common.home') !!}">
+                        <!--place for desktop logo-->
+                        <img class="logo" alt="logo" src="{!! asset('public/frontend/img/master-logo.png') !!}">
+                     </a>
+                  </div>
+                  <div class="col-md-10 col-sm-10 mobile-menu">
+                     <ul class="menu-horizontal text-left">
+                        <li class="dropdown">
+                           <a class="page-scroll" href="{!! URL::route('common.home') !!}">&#x2190; Back</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!--end of row-->
+            </div>
+            <!--end of container-->
+         </nav>
+         <!--end navigation-->
+    </div>
+ 
+    <div class="main-container">
+    
+        <section class="main-blog pd-0">
+          <div class="inner-back-blog main-gradient">
+            <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title-blog">
+                  <h1>Achievements and student </h1>
+                  <p>Fusce imperdiet, ex finibus semper ultricies, urna elit semper nibh, in ullamcorper nibh eros tincidunt eros. </p>
+                </div>
+                <!-- / of title-blog -->
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- / of inner-back-blog -->
+        </section>
+        
+        <section class="achieve">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="achieve_main text-center">
+                  <div class="user_pr">
+                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user3.jpg') !!}" alt="user-img">
+                  </div>
+                  <div class="writen-section">
+                    <div class="inner-detail">
+                      <div class="title_main mt-15 mb-15">
+                        <h3 class="text-capitalize mb-0 pb-0">Adam jordan</h3>
+                        <em>@designation</em>
+                      </div>
+                      <div class="pera-detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="achieve_main text-center">
+                  <div class="user_pr">
+                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user1.jpg') !!}" alt="user-img">
+                  </div>
+                  <div class="writen-section">
+                    <div class="inner-detail">
+                      <div class="title_main mt-15 mb-15">
+                        <h3 class="text-capitalize mb-0 pb-0">Jade Smith</h3>
+                        <em>@designation</em>
+                      </div>
+                      <div class="pera-detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="achieve_main text-center">
+                  <div class="user_pr">
+                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user2.jpg') !!}" alt="user-img">
+                  </div>
+                  <div class="writen-section">
+                    <div class="inner-detail">
+                      <div class="title_main mt-15 mb-15">
+                        <h3 class="text-capitalize mb-0 pb-0">ann lovefully</h3>
+                        <em>@designation</em>
+                      </div>
+                      <div class="pera-detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="achieve_main text-center">
+                  <div class="user_pr">
+                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user4.jpg') !!}" alt="user-img">
+                  </div>
+                  <div class="writen-section">
+                    <div class="inner-detail">
+                      <div class="title_main mt-15 mb-15">
+                        <h3 class="text-capitalize mb-0 pb-0">luisa smith</h3>
+                        <em>@designation</em>
+                      </div>
+                      <div class="pera-detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> 
+
+        @include("frontend.partials.footer") 
+
+    </div>
+
+@stop
+
+@section('pageleveljs')
+
+@stop

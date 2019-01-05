@@ -101,14 +101,14 @@ class HomeController extends Controller
         }
     }*/
 
-    public function achievements(Request $request)
+    public function students(Request $request)
     {
         try {
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | Achievements';
+            $data['meta_title'] = 'Quickdone | Students';
 
-            //return \View::make('frontend.index', $data );
+            return \View::make('frontend.student', $data );
         } catch (Exception $e) {
 
         }
@@ -121,7 +121,7 @@ class HomeController extends Controller
             $data['index'] = '1';
             $data['meta_title'] = 'Quickdone | Blogs';
 
-            //return \View::make('frontend.index', $data );
+            return \View::make('frontend.blog', $data );
         } catch (Exception $e) {
 
         }
@@ -134,7 +134,7 @@ class HomeController extends Controller
             $data['index'] = '1';
             $data['meta_title'] = 'Quickdone | Trial IELTS';
 
-            //return \View::make('frontend.index', $data );
+            return \View::make('frontend.trial-ielts', $data );
         } catch (Exception $e) {
 
         }

@@ -6,6 +6,8 @@
 
 @section('content')
 
+    @include("frontend.partials.header")
+
     <div class="main-container">
     
         @include("frontend.partials.slider")      

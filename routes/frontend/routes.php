@@ -15,9 +15,9 @@ Route::post('/inquiry', [
     'uses'  => 'FrontEnd\HomeController@inquiry'
 ]);
 
-Route::get('/achievements', [
-    'as'    => 'common.achievements',
-    'uses'  => 'FrontEnd\HomeController@achievements'
+Route::get('/students', [
+    'as'    => 'common.students',
+    'uses'  => 'FrontEnd\HomeController@students'
 ]);
 
 Route::get('/blogs', [

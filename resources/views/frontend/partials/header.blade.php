@@ -23,7 +23,7 @@
     <div class="container">
        <div class="row">
           <div class="col-md-2 col-sm-2 hidden-xs text-left">
-             <a href="#page-top" class="page-scroll">
+             <a href="{!! URL::route('common.home') !!}" class="page-scroll">
                 <!--place for desktop logo-->
                 <img class="logo" alt="logo" src="{!! asset('public/frontend/img/master-logo.png') !!}">
              </a>
@@ -37,7 +37,7 @@
                    <a class="page-scroll" href="#gallery">Gallery</a>
                 </li>
                 <li class="dropdown">
-                   <a class="page-scroll" href="{!! URL::route('common.achievements') !!}">Achievements</a>
+                   <a class="page-scroll" href="{!! URL::route('common.students') !!}">Students</a>
                 </li>
                 <li class="dropdown">
                    <a class="page-scroll" href="#contactus">Contact us</a>
