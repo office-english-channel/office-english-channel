@@ -4,7 +4,7 @@ namespace App\Http\Composers;
 
 use Illuminate\View\View;
 use Sentinel;
-use App\Http\DB\General\Setting;
+use App\Http\DB\Setting;
 
 class SettingDataComposer
 {
@@ -20,7 +20,7 @@ class SettingDataComposer
      */
     public function compose(View $view)
     {
-        $contact_details = [ 'facebook_url' => '', 'twitter_url' => '', 'linkedin_url' => '', 'youtube_url' => '', 'google_plus_url' => '', 'pinterest_url' => '', 'instagram_url' => '' ];
+        $contact_details = [ 'facebook_url' => '', 'twitter_url' => '', 'linkedin_url' => '', 'google_plus_url' => '', 'admin_email' => '' ];
         
         try {
             $settings_date = Setting::first();
@@ -29,10 +29,8 @@ class SettingDataComposer
                 $contact_details['facebook_url']      = $settings_date->facebook_url;
                 $contact_details['twitter_url']       = $settings_date->twitter_url;
                 $contact_details['linkedin_url']      = $settings_date->linkedin_url;
-                $contact_details['youtube_url']       = $settings_date->youtube_url;
                 $contact_details['google_plus_url']   = $settings_date->google_plus_url;
-                $contact_details['pinterest_url']     = $settings_date->pinterest_url;
-                $contact_details['instagram_url']     = $settings_date->instagram_url;
+                $contact_details['admin_email']       = $settings_date->admin_email;
             }
             
         } catch (Exception $e) {

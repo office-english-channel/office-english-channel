@@ -31,12 +31,10 @@ class SettingStoreCommand extends Command
 
             $record->admin_email            = $this->data['admin_email'];
             $record->contact_address        = $this->data['contact_address'];
+            $record->contact_phone          = $this->data['contact_phone'];
             $record->facebook_url           = $this->data['facebook_url'];
             $record->twitter_url            = $this->data['twitter_url'];
-            // $record->linkedin_url           = $this->data['linkedin_url'];
-            // $record->instagram_url          = $this->data['instagram_url'];
-            $record->youtube_url            = $this->data['youtube_url'];
-            // $record->dribble_url            = $this->data['dribble_url'];
+            $record->linkedin_url           = $this->data['linkedin_url'];
             $record->google_plus_url        = $this->data['google_plus_url'];
             $record->save();
 

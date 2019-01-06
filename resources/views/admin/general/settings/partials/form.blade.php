@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<!-- <div class="clearfix"></div>
+<div class="clearfix"></div>
 
 <div class="col-md-6">
     <div class="row margin-bottom-5">
@@ -57,43 +57,6 @@
         </div>
     </div>
 </div>
-
-<div class="col-md-6">
-    <div class="row margin-bottom-5">
-        <div class="form-group">
-            <div class="col-md-4"><label class="control-label">Instagram Url: </label></div>
-            <div class="col-md-7">
-                {!! Form::text('instagram_url', null, array('class' => 'form-control', 'placeholder' => 'Instagram Url' , 'id' => 'instagram_url', 'maxlength' => '90', 'tabindex' => $index++)) !!}
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<div class="clearfix"></div>
-
-<div class="col-md-6">
-    <div class="row margin-bottom-5">
-        <div class="form-group">
-            <div class="col-md-4"><label class="control-label">Youtube Url: </label></div>
-            <div class="col-md-7">
-                {!! Form::text('youtube_url', null, array('class' => 'form-control', 'placeholder' => 'Youtube Url' , 'id' => 'youtube_url', 'maxlength' => '90', 'tabindex' => $index++)) !!}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- <div class="col-md-6">
-    <div class="row margin-bottom-5">
-        <div class="form-group">
-            <div class="col-md-4"><label class="control-label">Dribble Url: </label></div>
-            <div class="col-md-7">
-                {!! Form::text('dribble_url', null, array('class' => 'form-control', 'placeholder' => 'Dribble Url' , 'id' => 'dribble_url', 'maxlength' => '90', 'tabindex' => $index++)) !!}
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- 
-<div class="clearfix"></div> -->
 
 <div class="col-md-6">
     <div class="row margin-bottom-5">
@@ -114,17 +77,6 @@
             <div class="col-md-4"><label class="control-label">Contact Phone: </label></div>
             <div class="col-md-7">
                 {!! Form::text('contact_phone', null, array('class' => 'form-control', 'placeholder' => 'Contact Phone' , 'id' => 'contact_phone', 'maxlength' => '90', 'tabindex' => $index++)) !!}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="row margin-bottom-5">
-        <div class="form-group">
-            <div class="col-md-4"><label class="control-label">Contact Text: </label></div>
-            <div class="col-md-7">
-                {!! Form::textarea('contact_text', null, array('class' => 'form-control', 'placeholder' => 'Contact Text' , 'id' => 'contact_text', 'tabindex' => $index++)) !!}
             </div>
         </div>
     </div>

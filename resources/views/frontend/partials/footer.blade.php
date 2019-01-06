@@ -23,28 +23,23 @@
           <div class="col-sm-6">
              <ul class="list-inline algn-right">
                 <li>
-                   <a href="#">
+                   <a href="{!! $settings_date->google_plus_url !!}" target="_blank">
                    <i class="icon-googlePlus ico-xs"></i>
                    </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <a href="{!! $settings_date->facebook_url !!}" target="_blank">
                    <i class="icon-facebook ico-xs"></i>
                    </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <a href="{!! $settings_date->linkedin_url !!}" target="_blank">
                    <i class="icon-linkdin ico-xs"></i>
                    </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <a href="{!! $settings_date->twitter_url !!}" target="_blank">
                    <i class="icon-twitter ico-xs"></i>
-                   </a>
-                </li>
-                <li>
-                   <a href="#">
-                   <i class="icon-behance ico-xs"></i>
                    </a>
                 </li>
              </ul>
@@ -53,7 +48,9 @@
        <!--end of row-->
        <div class="row">
          <div class="col-sm-7 col-xs-12">
-            <a href="mailto:register@theenglishchannel.in" class="support">emailus: register@theenglishchannel.in</a>
+          @if($settings_date->admin_email != '')
+            <a href="mailto:{!! $settings_date->admin_email !!}" class="support">emailus: {!! $settings_date->admin_email !!}</a>
+          @endif
          </div>
          <div class="col-sm-5 col-xs-12 algn-right">
             <span class="copyright">Made with Codefarm info tech all rights recieved 2018</span>
