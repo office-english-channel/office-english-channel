@@ -78,7 +78,7 @@
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-6 hide">
     <div class="row margin-bottom-5">
         <div class="form-group">
             <div class="col-md-4"><label class="control-label">Summary:  </label></div>
@@ -89,9 +89,7 @@
     </div>
 </div>
 
-<div class="clearfix"></div>
-
-<div class="col-md-6">
+ <div class="col-md-6">
     <div class="row margin-bottom-5">
         <div class="form-group">
             <div class="col-md-4">
@@ -103,6 +101,7 @@
         </div>
     </div>
 </div>
+<div class="clearfix"></div>
 
 <div class="clearfix"></div>
 
@@ -111,7 +110,7 @@
         <div class="form-group">
             <div class="col-md-2"><label class="control-label">Description:  </label></div>
             <div class="col-md-10">
-                {!! Form::textarea('description', null, array('class' => 'form-control', 'placeholder' => 'Description', 'id' => 'description', 'tabindex' => $index++)) !!}
+                {!! Form::textarea('description', null, array('class' => 'form-control ckeditor', 'placeholder' => 'Description', 'id' => 'description', 'tabindex' => $index++)) !!}
             </div>
         </div>
     </div>

@@ -78,12 +78,13 @@
                       <li>Book Your Seat. (Limited to 20 seats only)</li>
                     </ul>
                   </div>
-                  <form class="reletive" action="mail.php" method="post" id="trial_ielts">
+                  <form class="reletive" action="{!! URL::to('save-trial-ielts')!!}" method="post" id="trial_ielts">
+                    {{ csrf_field() }}
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group mb-2">
                           <h3 class="title-form">Full Name <abbr class="text-denger" title="title">*</abbr></h3>
-                          <input id="input-name" required="" name="name" type="text" placeholder="Your Answer" required="" class="form-control input-md">
+                          <input id="input-name" required="" name="full_name" type="text" placeholder="Your Answer" required="" class="form-control input-md">
                           <div class="in_error">  </div>
                         </div>
                       </div>
@@ -193,7 +194,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group mb-2">
                           <h3 class="title-form">Reason for choosing Trial IELTS </h3>
-                          <input type="text" required name="reason_for_choosing" placeholder="Your Answer" class="form-control input-md">
+                          <input type="text" required name="reason_choosing_ielts_ans" placeholder="Your Answer" class="form-control input-md">
                         </div>
                       </div>
                     </div>
@@ -207,28 +208,28 @@
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="checkbox"  data-error="#errNm1" name="contact_me_via[]" value="WhatsApp"> <span class="label-text"> WhatsApp</span>
+                                  <input type="checkbox"  data-error="#errNm1" name="payment_detail_contact[]" value="WhatsApp"> <span class="label-text"> WhatsApp</span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="checkbox" name="contact_me_via[]" value="Call"> <span class="label-text">Call</span>
+                                  <input type="checkbox" name="payment_detail_contact[]" value="Call"> <span class="label-text">Call</span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="checkbox" name="contact_me_via[]" value="Schedule-a-meeting"> <span class="label-text">Schedule a meeting</span>
+                                  <input type="checkbox" name="payment_detail_contact[]" value="Schedule-a-meeting"> <span class="label-text">Schedule a meeting</span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="checkbox" name="contact_me_via[]" value="Email"> <span class="label-text">Email</span>
+                                  <input type="checkbox" name="payment_detail_contact[]" value="Email"> <span class="label-text">Email</span>
                                 </label>
                               </div>
                             </li>
@@ -273,7 +274,7 @@
 
             $("#trial_ielts").validate({
                 rules : {
-                    name    : {
+                    full_name    : {
                         required    : true
                     },
                     email : {
@@ -295,8 +296,8 @@
                     }
                 },
                 messages : {
-                    name    : {
-                        required     : "Name field is required."
+                    full_name    : {
+                        required     : "Full Name field is required."
                     },
                     email : {
                       required    : "Email field is required.",

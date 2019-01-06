@@ -34,4 +34,9 @@ Route::get('/trial-ielts', [
     'as'    => 'common.trial-ielts',
     'uses'  => 'FrontEnd\HomeController@trialIELTS'
 ]);
+
+Route::post('/save-trial-ielts', [
+    'as'    => 'common.trial-ielts',
+    'uses'  => 'FrontEnd\HomeController@saveTrialIELTS'
+]);
 ?>

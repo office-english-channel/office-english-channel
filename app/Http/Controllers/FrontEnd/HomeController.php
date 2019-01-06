@@ -54,58 +54,6 @@ class HomeController extends Controller
         }
     }
 
-
-    /*public function inquiry(Request $request)
-    {
-
-        try {
-
-            // $data       = $request->all();
-
-            $recored                  = new ServiceRequest;
-            $recored->vendor_id       = $request->vendor_id;
-            $recored->category_id     = $request->category_id;
-            $recored->sub_category_id = $request->sub_category_id;
-            $recored->first_name      = $request->first_name;
-            $recored->last_name       = $request->last_name;
-            $recored->email           = $request->email;
-            $recored->mobile_no       = $request->mobile_no;
-            $recored->address_1       = $request->address_1;
-            $recored->comments        = $request->comments;
-            $recored->status          = 1;
-            $recored->save();
-
-
-            $data['vendor']           = Vendor::where('id', '=', $request->vendor_id)->first();
-            $data['category']         = Category::where('id', '=', $request->category_id)->first();
-            $data['subCategory']      = SubCategory::where('id', '=', $request->sub_category_id)->first();
-
-        // dd($data['subCategory']);
-            $params = [ '{vendor}'           => @($data['vendor']) ? $data['vendor']->vendor_name : 0,
-                        '{category}'         => @($data['category']) ? $data['category']->category_name : 0,
-                        '{sub_category}'     => @($data['subCategory']) ? $data['subCategory']->sub_category_name : 0,
-                        '{first_name}'       => $request->first_name,
-                        '{last_name}'        => $request->last_name,
-                        '{email}'            => $request->email,
-                        '{mobile_no}'        => $request->mobile_no,
-                        '{address_1}'        => $request->address_1,
-                        '{comments}'         => $request->comments
-
-                      ];
-
-          $clientMail = $request->email;  //client inquery mail...
-
-            // $mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, 'bhavin.codefarm@outlook.com' );
-            $mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, $clientMail );
-
-            $mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
-
-            // return \View::make('frontend.index', $data );
-        } catch (Exception $e) {
-
-        }
-    }*/
-
     public function students(Request $request)
     {
         try {
@@ -161,6 +109,54 @@ class HomeController extends Controller
             $data['meta_title'] = 'The English Channel | Trial IELTS';
 
             return \View::make('frontend.trial-ielts', $data );
+        } catch (Exception $e) {
+
+        }
+    }
+
+    public function saveTrialIELTS(Request $request)
+    {
+
+        try {
+
+            echo "<pre>"; print_r($request->all()); exit;
+            // $data       = $request->all();
+
+            //$trial_ielts_forms                                  = new ServiceRequest;
+            $trial_ielts_forms->full_name                       = $request->full_name;
+            $trial_ielts_forms->email                           = $request->email;
+            $trial_ielts_forms->contact_number                  = $request->contact_number;
+            $trial_ielts_forms->module                          = $request->module;
+            $trial_ielts_forms->test_date                       = $request->test_date;
+            $trial_ielts_forms->exposure                        = $request->exposure;
+            $trial_ielts_forms->exam_date                       = $request->exam_date;
+            $trial_ielts_forms->reason_choosing_ielts_ans       = $request->reason_choosing_ielts_ans;
+            $trial_ielts_forms->payment_detail_contact          = $request->payment_detail_contact;
+            $trial_ielts_forms->save();
+
+
+            
+            // dd($data['subCategory']);
+            /*$params = [ '{vendor}'           => @($data['vendor']) ? $data['vendor']->vendor_name : 0,
+                        '{category}'         => @($data['category']) ? $data['category']->category_name : 0,
+                        '{sub_category}'     => @($data['subCategory']) ? $data['subCategory']->sub_category_name : 0,
+                        '{first_name}'       => $request->first_name,
+                        '{last_name}'        => $request->last_name,
+                        '{email}'            => $request->email,
+                        '{mobile_no}'        => $request->mobile_no,
+                        '{address_1}'        => $request->address_1,
+                        '{comments}'         => $request->comments
+
+                      ];*/
+
+          //$clientMail = $request->email;  //client inquery mail...
+
+            // $mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, 'bhavin.codefarm@outlook.com' );
+            //$mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, $clientMail );
+
+            //$mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
+
+            // return \View::make('frontend.index', $data );
         } catch (Exception $e) {
 
         }

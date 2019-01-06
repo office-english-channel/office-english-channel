@@ -109,6 +109,7 @@
     </script>
 
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
 
     <script type="text/javascript">
         $(function() {

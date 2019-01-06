@@ -92,15 +92,15 @@
                 <!-- / of slider-blog -->
                 <div class="blog-meta">
                   <p>
-                    <?php $blog_publish_date = date('d  M, Y',strtotime($blog_detail->publish_date));?>
+                    <?php $blog_publish_date = date('dS  M, Y',strtotime($blog_detail->publish_date));?>
                     <span class="meta-date">{!! $blog_publish_date !!}| {!! $blog_detail->title !!} | </span>
-                    <a href="#" class="meta-category read-more">23 Comments</a>
+                    <!-- <a href="#" class="meta-category read-more">23 Comments</a> -->
                   </p>
                 </div>
                 <!-- / of blog-meta -->
                 <div class="blog-content">
                     <h3>{!! $blog_detail->title !!}</h3>
-                    <p>{!! $blog_detail->description !!}</p>
+                    <p>{!! nl2br($blog_detail->description) !!}</p>
                 </div>
                 <!-- / of blog-content -->
                 <div class="blog-share-box clearfix">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-the-author">
+                <!-- <div class="about-the-author">
                     <h3>About the author</h3>
                     <div class="about-author-box">
                         <div class="media">
@@ -140,8 +140,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="author-comments">
+                </div> -->
+                <!-- <div class="author-comments">
                     <h3>Comments</h3>
                     <div class="comments">
                         <div class="media">
@@ -157,7 +157,6 @@
                                     <a href="#" class="reply-btn">REPLY</a>
                                 </div>
 
-                                <!-- Nested media object -->
                                 <div class="media">
                                     <div class="media-left">
                                         <div class="auth-av">
@@ -170,13 +169,12 @@
                                         <div class="reply-button">
                                             <a href="#" class="reply-btn">REPLY</a>
                                         </div>
-                                        <!-- Nested media object -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- / of author-comments -->
                 <div class="leave-reply">
                     <div class="contact-content">
