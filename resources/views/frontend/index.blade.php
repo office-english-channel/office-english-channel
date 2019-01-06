@@ -85,31 +85,15 @@
               <div class="col-md-12 text-center">
                 <div class="col-sm-4 contact-item">
                   <span class="font-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
-                  <p class="head-info">089 051 36117</p>
+                  <p class="head-info">{!! $settings_date->contact_phone !!}</p>
                 </div>
                 <div class="col-sm-4 contact-item">
                   <span class="font-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                  <p class="head-info">Vastrapur<br> Shop1-2 First floor, satellite shopping center, Mansi circle, Vastrapur, Ahmedabad-15.</p>
+                  <p class="head-info">{!! $settings_date->contact_address !!}</p>
                 </div>
                 <div class="col-sm-4 contact-item">
                   <span class="font-icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
-                  <p class="head-info"><a href="mailto:register@theenglishchannel.in">register@theenglishchannel.in</a></p>
-                </div>
-              </div><!-- / -->
-             </div><!-- /row -->
-             <div class="row mt-60">
-              <div class="col-md-12 text-center">
-                <div class="col-sm-4 contact-item">
-                  <span class="font-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
-                  <p class="head-info">090 811 81777</p>
-                </div>
-                <div class="col-sm-4 contact-item">
-                  <span class="font-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                  <p class="head-info">Ellisbridge<br> 4th Floor, SEWA Building, Opp Karnavati Hospital, Ellisbridge, Ahmedabad-06.</p>
-                </div>
-                <div class="col-sm-4 contact-item">
-                  <span class="font-icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
-                  <p class="head-info"><a href="mailto:register@theenglishchannel.in">register@theenglishchannel.in</a></p>
+                  <p class="head-info"><a href="mailto:{!! $settings_date->admin_email !!}">{!! $settings_date->admin_email !!}</a></p>
                 </div>
               </div><!-- / -->
              </div><!-- /row -->

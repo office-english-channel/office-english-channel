@@ -16,6 +16,9 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer(
             'frontend.partials.footer', 'App\Http\Composers\SettingDataComposer'
         );
+        view()->composer(
+            'frontend.index', 'App\Http\Composers\SettingDataComposer'
+        );
     }
 
     /**
