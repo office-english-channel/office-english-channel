@@ -96,6 +96,36 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'uses'  => 'Admin\SettingsController@update'
     ]);
     
+    //routes for galleries 
+    Route::get('/galleries/list', [
+            'as'    => 'admin.galleries.index',
+            'uses'  => 'Admin\GalleriesController@index'
+    ]);
+    Route::get('/galleries/add', [
+            'as'    => 'admin.galleries.create',
+            'uses'  => 'Admin\GalleriesController@create'
+    ]);
+    Route::post('/galleries/store', [
+            'as'    => 'admin.galleries.store',
+            'uses'  => 'Admin\GalleriesController@store'
+    ]);
+    Route::get('/galleries/edit/{id}', [
+            'as'    => 'admin.galleries.edit',
+            'uses'  => 'Admin\GalleriesController@edit'
+    ]);
+    Route::post('/galleries/update', [
+            'as'    => 'admin.galleries.update',
+            'uses'  => 'Admin\GalleriesController@update'
+    ]);
+    Route::get('/galleries/delete/{id}', [
+            'as'    => 'admin.galleries.delete',
+            'uses'  => 'Admin\GalleriesController@destroy'
+    ]);
+    Route::get('/galleries/get-list', [
+            'as'    => 'admin.galleries.getlist',
+            'uses'  => 'Admin\GalleriesController@getList'
+    ]);
+    
     //routes for blogcategories 
     Route::get('/blogcategories/list', [
             'as'    => 'admin.blogcategories.index',
@@ -125,6 +155,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'as'    => 'admin.blogcategories.getlist',
             'uses'  => 'Admin\BlogCategoriesController@getList'
     ]);
+
+    
 
     //routes for students
     Route::get('/students/list', [
