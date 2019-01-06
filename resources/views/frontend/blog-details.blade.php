@@ -176,13 +176,13 @@
                 <!-- / of author-comments -->
                 <div class="leave-reply">
                     <div class="contact-content">
-                        <h3>Leave a reply</h3>
+                        <h3>Contact</h3>
                     </div>
                 </div>
                 <!-- / of leave-reply -->
                 <div class="contact-form">
                     <div class="row">
-                        <form class="text-left" id="contact_form" action="{!! URL::to('contact-form')!!}">
+                        <form class="text-left" method="post" id="contact_form" action="{!! URL::to('save-contact-form')!!}">
                         {{ csrf_field() }}
 
                             <div class="clearfix">
@@ -192,21 +192,21 @@
                                 </div>
                                 <div class="form-group col-md-4 col-sm-6">
                                     <label>E-MAIL ADDRESS <span>*</span></label>
-                                    <input class="form-control" name="company_name" placeholder="enter e-mail address" type="text">
+                                    <input class="form-control" name="email" placeholder="enter e-mail address" type="text">
                                 </div>
                                 <div class="form-group col-md-4 col-sm-12">
-                                    <label>WEBSITE <span>*</span></label>
-                                    <input class="form-control" name="email" placeholder="https://" type="email">
+                                    <label>SUBJECT <span>*</span></label>
+                                    <input class="form-control" name="subject" placeholder="enter your subject" type="text">
                                 </div>
                             </div>
                             <div class="clearfix">
                                 <div class="form-group col-sm-12">
                                     <label>MESSAGE <span>*</span></label>
-                                    <textarea class="form-control" placeholder="type in a message" name="message"></textarea>
+                                    <textarea class="form-control" placeholder="type in a message" name="comments"></textarea>
                                 </div>
                                 <!--  <input class="btn btn-default pull-right" name="submit" value="SUBMIT" type="submit"> -->
                                 <div class="form-group col-sm-12">
-                                    <button type="submit" class="btn btn-grd pull-right btn-gradient">Submit</button>
+                                    <button type="submit" class="btn btn-grd pull-right btn-gradient" id="contact_form_btn">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -378,5 +378,60 @@
 @stop
 
 @section('pageleveljs')
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+  <script>
+      // $("#trial_ielts").validate();
 
+      $(document).ready(function(){
+
+          $("#contact_form").validate({
+              rules : {
+                  name    : {
+                      required    : true
+                  },
+                  email : {
+                    required    : true,
+                    email       : true
+                  },
+                  subject : {
+                    required    : true,
+                  },
+                  comments : {
+                    required    : false,
+                  }
+              },
+              messages : {
+                  name    : {
+                      required     : "Name field is required."
+                  },
+                  email : {
+                    required    : "Email field is required.",
+                    email       : "Please enter valid email address.",
+                  },
+                  subject : {
+                    required    : "Subject field is required.",
+                  },
+                  comments : {
+                    required    : "Message field is required."
+                  }
+              },
+              errorPlacement: function(error, element) {
+                var placement = $(element).data('error');
+                if (placement) {
+                  $(placement).append(error)
+                } else {
+                  error.insertAfter(element);
+                }
+              }
+          });
+
+      //code for submit data on enter form controls
+          $('#contact_form_btn').find('input').keypress(function(e) {
+               if(e.which == 10 || e.which == 13) {
+                    $("#contact_form").trigger('click');
+               }
+          });
+      });
+
+  </script>
 @stop

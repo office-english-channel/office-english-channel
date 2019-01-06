@@ -1688,7 +1688,7 @@ input[type="radio"]:disabled + .label-text:before{
 abbr { font-size: 12px; position: relative; top: -10px; }
 .inner-checkbox { font-size: 18px; font-style: normal; }
 .submit-button { background: transparent; padding: 10px 35px; }
-label.error { font-size: 14px; margin-top: 8px; color: #ff4c05; }
+label.error { font-size: 14px; margin-top: 8px; color: #ff4c05 !important; }
 .error-bg { background: rgba(255, 76, 5, 0.5); padding: 15px; border-radius: 2px; }
 /*.highlight .fade-text { font-size: 32px; }*/
 .bx-wrapper { background-color: transparent; border: none; box-shadow: none; margin-bottom: 0; }

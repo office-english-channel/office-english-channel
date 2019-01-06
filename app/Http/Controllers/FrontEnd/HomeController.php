@@ -15,6 +15,7 @@ use App\Http\DB\SendMailModel;
 use App\Http\DB\Setting;
 use App\Http\DB\MailTemplates;
 use App\Http\DB\TrialIeltsForms;
+use App\Http\DB\InquiryForm;
 use Mail;
 use App\Http\DB\Students;
 
@@ -169,10 +170,14 @@ class HomeController extends Controller
 
         try {
 
-            $trial_ielts_forms                            = new TrialIeltsForms;
-            $trial_ielts_forms->full_name                 = $request->full_name;
-            $trial_ielts_forms->email                     = $request->email;
-            $trial_ielts_forms->save();
+            //echo "<pre>"; print_r($request->all()); exit;
+
+            $inquiry_form                  = new InquiryForm;
+            $inquiry_form->first_name      = $request->name;
+            $inquiry_form->email           = $request->email;
+            $inquiry_form->subject         = $request->subject;
+            $inquiry_form->comments        = $request->comments;
+            $inquiry_form->save();
             
             // return \View::make('frontend.trial-ielts', $data );
             return Redirect::back();
