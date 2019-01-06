@@ -13,18 +13,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(
-            'frontend.partials.header', 'App\Http\Composers\MainHeaderComposer'
-        );
-        view()->composer(
-            'frontend.partials.footer', 'App\Http\Composers\FooterContactUsComposer'
-        );
-        view()->composer(
-            'frontend.partials.header', 'App\Http\Composers\FooterContactUsComposer'
-        );
-        view()->composer(
-            'frontend.partials.footer', 'App\Http\Composers\FooterMenuComposer'
-        );
+        // view()->composer(
+        //     'frontend.partials.footer', 'App\Http\Composers\FooterContactUsComposer'
+        // );
     }
 
     /**

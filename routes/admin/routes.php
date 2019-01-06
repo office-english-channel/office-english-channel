@@ -126,87 +126,34 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'uses'  => 'Admin\CategoriesController@getList'
     ]);
 
-    //routes for sub-categories 
-    Route::get('/sub-categories/list', [
-            'as'    => 'admin.subcategories.index',
-            'uses'  => 'Admin\SubCategoriesController@index'
+    //routes for students
+    Route::get('/students/list', [
+            'as'    => 'admin.students.index',
+            'uses'  => 'Admin\StudentsController@index'
     ]);
-    Route::get('/sub-categories/add', [
-            'as'    => 'admin.subcategories.create',
-            'uses'  => 'Admin\SubCategoriesController@create'
+    Route::get('/students/add', [
+            'as'    => 'admin.students.create',
+            'uses'  => 'Admin\StudentsController@create'
     ]);
-    Route::post('/sub-categories/store', [
-            'as'    => 'admin.subcategories.store',
-            'uses'  => 'Admin\SubCategoriesController@store'
+    Route::post('/students/store', [
+            'as'    => 'admin.students.store',
+            'uses'  => 'Admin\StudentsController@store'
     ]);
-    Route::get('/sub-categories/edit/{id}', [
-            'as'    => 'admin.subcategories.edit',
-            'uses'  => 'Admin\SubCategoriesController@edit'
+    Route::get('/students/edit/{id}', [
+            'as'    => 'admin.students.edit',
+            'uses'  => 'Admin\StudentsController@edit'
     ]);
-    Route::post('/sub-categories/update', [
-            'as'    => 'admin.subcategories.update',
-            'uses'  => 'Admin\SubCategoriesController@update'
+    Route::post('/students/update', [
+            'as'    => 'admin.students.update',
+            'uses'  => 'Admin\StudentsController@update'
     ]);
-    Route::get('/sub-categories/delete/{id}', [
-            'as'    => 'admin.subcategories.delete',
-            'uses'  => 'Admin\SubCategoriesController@destroy'
+    Route::get('/students/delete/{id}', [
+            'as'    => 'admin.students.delete',
+            'uses'  => 'Admin\StudentsController@destroy'
     ]);
-    Route::get('/sub-categories/get-list', [
-            'as'    => 'admin.subcategories.getlist',
-            'uses'  => 'Admin\SubCategoriesController@getList'
-    ]);
-
-    //routes for vendors 
-    Route::get('/vendors/list', [
-            'as'    => 'admin.vendors.index',
-            'uses'  => 'Admin\VendorsController@index'
-    ]);
-    Route::get('/vendors/add', [
-            'as'    => 'admin.vendors.create',
-            'uses'  => 'Admin\VendorsController@create'
-    ]);
-    Route::post('/vendors/store', [
-            'as'    => 'admin.vendors.store',
-            'uses'  => 'Admin\VendorsController@store'
-    ]);
-    Route::get('/vendors/edit/{id}', [
-            'as'    => 'admin.vendors.edit',
-            'uses'  => 'Admin\VendorsController@edit'
-    ]);
-    Route::post('/vendors/update', [
-            'as'    => 'admin.vendors.update',
-            'uses'  => 'Admin\VendorsController@update'
-    ]);
-    Route::get('/vendors/delete/{id}', [
-            'as'    => 'admin.vendors.delete',
-            'uses'  => 'Admin\VendorsController@destroy'
-    ]);
-    Route::get('/vendors/get-list', [
-            'as'    => 'admin.vendors.getlist',
-            'uses'  => 'Admin\VendorsController@getList'
-    ]);
-    //This route is used to get area list using Ajax
-    Route::get('/vendors/get-sub-category-list', [
-            'as'    => 'admin.vendors.getareaslist',
-            'uses'  => 'Admin\VendorsController@getSubCategoryList'
-    ]);
-
-    //routes for contactforms 
-    Route::get('/contactforms/list', [
-            'as'    => 'admin.contactforms.index',
-            'uses'  => 'Admin\ContactFormsController@index'
-    ]);
-    Route::get('/contactforms/show/{id}', [
-            'as'    => 'admin.contactforms.show',
-            'uses'  => 'Admin\ContactFormsController@show'
-    ]);
-    Route::get('/contactforms/delete/{id}', [
-            'as'    => 'admin.contactforms.delete',
-            'uses'  => 'Admin\ContactFormsController@destroy'
-    ]);
-    Route::get('/contactforms/get-list', [
-            'as'    => 'admin.contactforms.getlist',
-            'uses'  => 'Admin\ContactFormsController@getList'
+    Route::get('/students/get-list', [
+            'as'    => 'admin.students.getlist',
+            'uses'  => 'Admin\StudentsController@getList'
     ]);
 
     //routes for inquiryforms 
@@ -225,54 +172,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
     Route::get('/inquiryforms/get-list', [
             'as'    => 'admin.inquiryforms.getlist',
             'uses'  => 'Admin\InquiryFormsController@getList'
-    ]);
-
-    //routes for servicerequests 
-    Route::get('/servicerequests/list', [
-            'as'    => 'admin.servicerequests.index',
-            'uses'  => 'Admin\ServiceRequestsController@index'
-    ]);
-    Route::get('/servicerequests/show/{id}', [
-            'as'    => 'admin.servicerequests.show',
-            'uses'  => 'Admin\ServiceRequestsController@show'
-    ]);
-    Route::get('/servicerequests/delete/{id}', [
-            'as'    => 'admin.servicerequests.delete',
-            'uses'  => 'Admin\ServiceRequestsController@destroy'
-    ]);
-    Route::get('/servicerequests/get-list', [
-            'as'    => 'admin.servicerequests.getlist',
-            'uses'  => 'Admin\ServiceRequestsController@getList'
-    ]);
-
-    //routes for subscribers 
-    Route::get('/subscribers/list', [
-            'as'    => 'admin.subscribers.index',
-            'uses'  => 'Admin\SubscribersController@index'
-    ]);
-    Route::get('/subscribers/add', [
-            'as'    => 'admin.subscribers.create',
-            'uses'  => 'Admin\SubscribersController@create'
-    ]);
-    Route::post('/subscribers/store', [
-            'as'    => 'admin.subscribers.store',
-            'uses'  => 'Admin\SubscribersController@store'
-    ]);
-    Route::get('/subscribers/edit/{id}', [
-            'as'    => 'admin.subscribers.edit',
-            'uses'  => 'Admin\SubscribersController@edit'
-    ]);
-    Route::post('/subscribers/update', [
-            'as'    => 'admin.subscribers.update',
-            'uses'  => 'Admin\SubscribersController@update'
-    ]);
-    Route::get('/subscribers/delete/{id}', [
-            'as'    => 'admin.subscribers.delete',
-            'uses'  => 'Admin\SubscribersController@destroy'
-    ]);
-    Route::get('/subscribers/get-list', [
-            'as'    => 'admin.subscribers.getlist',
-            'uses'  => 'Admin\SubscribersController@getList'
     ]);
 
     //Pages related routes
@@ -304,66 +203,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'as'    => 'admin.general.pages.getlist',
             'uses'  => 'Admin\General\PagesController@getList'
     ]);
-
-    //Footer Links related routes
-    Route::get('/footer-links/list', [
-            'as'    => 'admin.general.footerlinks.index',
-            'uses'  => 'Admin\General\FooterLinksController@index'
-    ]);
-    Route::get('/footer-links/add', [
-            'as'    => 'admin.general.footerlinks.create',
-            'uses'  => 'Admin\General\FooterLinksController@create'
-    ]);
-    Route::post('/footer-links/store', [
-            'as'    => 'admin.general.footerlinks.store',
-            'uses'  => 'Admin\General\FooterLinksController@store'
-    ]);
-    Route::get('/footer-links/edit/{id}', [
-            'as'    => 'admin.general.footerlinks.edit',
-            'uses'  => 'Admin\General\FooterLinksController@edit'
-    ]);
-    Route::post('/footer-links/update', [
-            'as'    => 'admin.general.footerlinks.update',
-            'uses'  => 'Admin\General\FooterLinksController@update'
-    ]);
-    Route::get('/footer-links/delete/{id}', [
-            'as'    => 'admin.general.footerlinks.delete',
-            'uses'  => 'Admin\General\FooterLinksController@destroy'
-    ]);
-    Route::get('/footer-links/get-list', [
-            'as'    => 'admin.general.footerlinks.getlist',
-            'uses'  => 'Admin\General\FooterLinksController@getList'
-    ]);
-
-    //Menus Links related routes
-    Route::get('/menus/list', [
-        'as'    => 'admin.general.menus.index',
-        'uses'  => 'Admin\General\MenusController@index'
-    ]);
-    Route::get('/menus/add', [
-        'as'    => 'admin.general.menus.create',
-        'uses'  => 'Admin\General\MenusController@create'
-    ]);
-    Route::post('/menus/store', [
-        'as'    => 'admin.general.menus.store',
-        'uses'  => 'Admin\General\MenusController@store'
-    ]);
-    Route::get('/menus/edit/{id}', [
-        'as'    => 'admin.general.menus.edit',
-        'uses'  => 'Admin\General\MenusController@edit'
-    ]);
-    Route::post('/menus/update', [
-        'as'    => 'admin.general.menus.update',
-        'uses'  => 'Admin\General\MenusController@update'
-    ]);
-    Route::get('/menus/delete/{id}', [
-        'as'    => 'admin.general.menus.delete',
-        'uses'  => 'Admin\General\MenusController@destroy'
-    ]);
-    Route::get('/menus/get-list', [
-        'as'    => 'admin.general.menus.getlist',
-        'uses'  => 'Admin\General\MenusController@getList'
-    ]);
-
 });
 ?>
