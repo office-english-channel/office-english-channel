@@ -16,7 +16,7 @@ class CreateBlogCategoriesTable extends Migration
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cover_id')->unsigned()->nullable()->index();
-            $table->string('label', 255);
+            $table->string('category_name', 255);
             $table->string('slug', 255)->nullable()->default(null);
             $table->string('summary', 512)->nullable()->default(null);
             $table->smallInteger('status')->default('0')->comment('1-ACTIVE,0-INACTIVE');

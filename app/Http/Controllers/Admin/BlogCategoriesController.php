@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Session;
 use Yajra\DataTables\Facades\DataTables;
 use App\Helpers\General;
 
-use App\Http\DB\Category;
-use App\Commands\Admin\CategoryStoreCommand;
-use App\Http\Requests\Admin\CategoryRequest;
+use App\Http\DB\BlogCategory;
+use App\Commands\Admin\BlogCategoryStoreCommand;
+use App\Http\Requests\Admin\BlogCategoryRequest;
 
-class CategoriesController extends Controller
+class BlogCategoriesController extends Controller
 {
     public $view    = '';
     public $index   = '';
@@ -21,10 +21,10 @@ class CategoriesController extends Controller
     public $edit    = '';
 
     public function __construct() {
-        $this->view     = 'admin.general.categories.';
-        $this->index    = 'admin/general/categories/index.';
-        $this->create   = 'admin/general/categories/create.';
-        $this->edit     = 'admin/general/categories/edit.';
+        $this->view     = 'admin.blogcategories.';
+        $this->index    = 'admin/blogcategories/index.';
+        $this->create   = 'admin/blogcategories/create.';
+        $this->edit     = 'admin/blogcategories/edit.';
     }
 
     /**
@@ -62,7 +62,7 @@ class CategoriesController extends Controller
             $data['meta_title'] = \Lang::get($this->create.'meta_title');
             $data['lang']       = $this->create;
             $data['view']       = $this->view;
-            $data['record']     = new Category;
+            $data['record']     = new BlogCategory;
             $data['index']      = '1';                        
 
             return \View::make($this->view.'create', $data );
@@ -78,15 +78,15 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogCategoryRequest $request)
     {
         try {
             $data = $request->all();
-            $result = $this->dispatch(new CategoryStoreCommand($data, $request, 'new'));
+            $result = $this->dispatch(new BlogCategoryStoreCommand($data, $request, 'new'));
 
             if ($result) {
                 Session::flash('success', \Lang::get($this->index.'create_success_msg') );
-                return redirect(route('admin.categories.index'));
+                return redirect(route('admin.blogcategories.index'));
             } else {
                 Session::flash('error', \Lang::get($this->index.'create_error_msg'));
                 return Redirect::back()->withInput();
@@ -122,7 +122,7 @@ class CategoriesController extends Controller
             $data['meta_title'] = \Lang::get($this->edit.'meta_title');
             $data['lang']       = $this->edit;
             $data['view']       = $this->view;
-            $data['record']     = Category::where('id', $id)->first();
+            $data['record']     = BlogCategory::where('id', $id)->first();
             $data['index']      = '1';
 
             return \View::make($this->view.'edit', $data );
@@ -139,15 +139,15 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(BlogCategoryRequest $request)
     {
         try {
             $data = $request->all();
-            $result = $this->dispatch(new CategoryStoreCommand($data, $request, 'edit'));
+            $result = $this->dispatch(new BlogCategoryStoreCommand($data, $request, 'edit'));
 
             if ($result) {
                 Session::flash('success', \Lang::get($this->index.'edit_success_msg') );
-                return redirect(route('admin.categories.index'));
+                return redirect(route('admin.blogcategories.index'));
             } else {
                 Session::flash('error', \Lang::get($this->index.'edit_error_msg'));
                 return Redirect::back()->withInput();
@@ -168,11 +168,11 @@ class CategoriesController extends Controller
         try {
             $data = $request->all();
             $data['id']         = $id;
-            $result = $this->dispatch(new CategoryStoreCommand($data, $request, 'delete'));
+            $result = $this->dispatch(new BlogCategoryStoreCommand($data, $request, 'delete'));
 
             if ($result == 'done') {
                 Session::flash('success', \Lang::get($this->index.'delete_success_msg') );
-                return redirect(route('admin.categories.index'));
+                return redirect(route('admin.blogcategories.index'));
             } else if($result == 'exists') {
                 Session::flash('error', \Lang::get($this->index.'delete_denied_msg'));
                 return Redirect::back()->withInput();
@@ -187,7 +187,7 @@ class CategoriesController extends Controller
 
     public function getList(Request $request) {
         try {
-            $list = Category::get();
+            $list = BlogCategory::get();
 
             return Datatables::of($list)
                     ->rawColumns(['id', 'category_name', 'status', 'action'])
@@ -205,8 +205,8 @@ class CategoriesController extends Controller
                         }
                     })
                     ->addColumn('action', function($record) {
-                        return '<a href="'.\URL::route('admin.categories.edit', [ 'id' => $record->id ]).'" class="btn blue btn-icon-only btn-outline"><i class="fa fa-edit"></i></a>&nbsp;
-                                <a href="javascript:;" onClick="deleteRow(\''.$record->id.'\');" id="'.$record->id.'" class="btn red-thunderbird btn-icon-only btn-outline" data-url="' . \URL::route('admin.categories.delete', ['id' => $record->id]) . '"><i class="fa fa-trash-o"></i></a>';       
+                        return '<a href="'.\URL::route('admin.blogcategories.edit', [ 'id' => $record->id ]).'" class="btn blue btn-icon-only btn-outline"><i class="fa fa-edit"></i></a>&nbsp;
+                                <a href="javascript:;" onClick="deleteRow(\''.$record->id.'\');" id="'.$record->id.'" class="btn red-thunderbird btn-icon-only btn-outline" data-url="' . \URL::route('admin.blogcategories.delete', ['id' => $record->id]) . '"><i class="fa fa-trash-o"></i></a>';       
                     })
                     ->make(true);
         } catch (Exception $e) {

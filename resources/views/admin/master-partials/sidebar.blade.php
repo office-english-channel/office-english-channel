@@ -22,10 +22,10 @@
                 </a>
             </li>
 
-            <li class="nav-item @if(Request::segment(2)=='categories') {!! 'active open' !!} @endif">
-                <a href="{!! URL::route('admin.categories.index') !!}" class="nav-link nav-toggle">
+            <li class="nav-item @if(Request::segment(2)=='blogcategories') {!! 'active open' !!} @endif">
+                <a href="{!! URL::route('admin.blogcategories.index') !!}" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
-                    <span class="title">Categories</span>
+                    <span class="title">Blog Categories</span>
                 </a>
             </li>
 

@@ -96,34 +96,34 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'uses'  => 'Admin\SettingsController@update'
     ]);
     
-    //routes for categories 
-    Route::get('/categories/list', [
-            'as'    => 'admin.categories.index',
-            'uses'  => 'Admin\CategoriesController@index'
+    //routes for blogcategories 
+    Route::get('/blogcategories/list', [
+            'as'    => 'admin.blogcategories.index',
+            'uses'  => 'Admin\BlogCategoriesController@index'
     ]);
-    Route::get('/categories/add', [
-            'as'    => 'admin.categories.create',
-            'uses'  => 'Admin\CategoriesController@create'
+    Route::get('/blogcategories/add', [
+            'as'    => 'admin.blogcategories.create',
+            'uses'  => 'Admin\BlogCategoriesController@create'
     ]);
-    Route::post('/categories/store', [
-            'as'    => 'admin.categories.store',
-            'uses'  => 'Admin\CategoriesController@store'
+    Route::post('/blogcategories/store', [
+            'as'    => 'admin.blogcategories.store',
+            'uses'  => 'Admin\BlogCategoriesController@store'
     ]);
-    Route::get('/categories/edit/{id}', [
-            'as'    => 'admin.categories.edit',
-            'uses'  => 'Admin\CategoriesController@edit'
+    Route::get('/blogcategories/edit/{id}', [
+            'as'    => 'admin.blogcategories.edit',
+            'uses'  => 'Admin\BlogCategoriesController@edit'
     ]);
-    Route::post('/categories/update', [
-            'as'    => 'admin.categories.update',
-            'uses'  => 'Admin\CategoriesController@update'
+    Route::post('/blogcategories/update', [
+            'as'    => 'admin.blogcategories.update',
+            'uses'  => 'Admin\BlogCategoriesController@update'
     ]);
-    Route::get('/categories/delete/{id}', [
-            'as'    => 'admin.categories.delete',
-            'uses'  => 'Admin\CategoriesController@destroy'
+    Route::get('/blogcategories/delete/{id}', [
+            'as'    => 'admin.blogcategories.delete',
+            'uses'  => 'Admin\BlogCategoriesController@destroy'
     ]);
-    Route::get('/categories/get-list', [
-            'as'    => 'admin.categories.getlist',
-            'uses'  => 'Admin\CategoriesController@getList'
+    Route::get('/blogcategories/get-list', [
+            'as'    => 'admin.blogcategories.getlist',
+            'uses'  => 'Admin\BlogCategoriesController@getList'
     ]);
 
     //routes for students

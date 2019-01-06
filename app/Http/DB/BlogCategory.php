@@ -4,14 +4,14 @@ namespace App\Http\DB;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class BlogCategory extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'categories';
+    protected $table = 'blog_categories';
     /**
      * The attributes that are mass assignable.
      *
@@ -26,7 +26,7 @@ class Category extends Model
         return $this->hasOne('App\Http\DB\Media', 'id', 'cover_id');
     }
 
-    public function categoryProduct() {
-        return $this->hasOne('App\Http\DB\Vendor', 'category_id', 'id');
-    }
+    // public function categoryProduct() {
+    //     return $this->hasOne('App\Http\DB\Vendor', 'category_id', 'id');
+    // }
 }
