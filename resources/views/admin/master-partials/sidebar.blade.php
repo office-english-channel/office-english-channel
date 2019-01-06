@@ -36,6 +36,12 @@
                 </a>
             </li>
 
+            <li class="nav-item @if(Request::segment(2)=='blogs') {!! 'active open' !!} @endif">
+                <a href="{!! URL::route('admin.blogs.index') !!}" class="nav-link nav-toggle">
+                    <i class="icon-diamond"></i>
+                    <span class="title">Blogs</span>
+                </a>
+            </li>
 
             <li class="nav-item @if(Request::segment(2)=='students') {!! 'active open' !!} @endif">
                 <a href="{!! URL::route('admin.students.index') !!}" class="nav-link nav-toggle">

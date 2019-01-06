@@ -156,7 +156,35 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'uses'  => 'Admin\BlogCategoriesController@getList'
     ]);
 
-    
+    // routes for blogcategories 
+    Route::get('/blogs/list', [
+            'as'    => 'admin.blogs.index',
+            'uses'  => 'Admin\BlogsController@index'
+    ]);
+    Route::get('/blogs/add', [
+            'as'    => 'admin.blogs.create',
+            'uses'  => 'Admin\BlogsController@create'
+    ]);
+    Route::post('/blogs/store', [
+            'as'    => 'admin.blogs.store',
+            'uses'  => 'Admin\BlogsController@store'
+    ]);
+    Route::get('/blogs/edit/{id}', [
+            'as'    => 'admin.blogs.edit',
+            'uses'  => 'Admin\BlogsController@edit'
+    ]);
+    Route::post('/blogs/update', [
+            'as'    => 'admin.blogs.update',
+            'uses'  => 'Admin\BlogsController@update'
+    ]);
+    Route::get('/blogs/delete/{id}', [
+            'as'    => 'admin.blogs.delete',
+            'uses'  => 'Admin\BlogsController@destroy'
+    ]);
+    Route::get('/blogs/get-list', [
+            'as'    => 'admin.blogs.getlist',
+            'uses'  => 'Admin\BlogsController@getList'
+    ]);
 
     //routes for students
     Route::get('/students/list', [

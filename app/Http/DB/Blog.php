@@ -4,22 +4,24 @@ namespace App\Http\DB;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategory extends Model
+class Blog extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'blog_categories';
+    protected $table = 'blogs';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [ 'cover_id', 
-                            'category_name', 
+                            'blog_category_id', 
+                            'title', 
                             'slug', 
+                            'description', 
                             'summary' ];
 
     public function cover() {

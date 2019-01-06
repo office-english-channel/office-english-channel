@@ -28,8 +28,4 @@ class Students extends Model
     public function cover() {
         return $this->hasOne('App\Http\DB\Media', 'id', 'cover_id');
     }
-
-    // public function categoryProduct() {
-    //     return $this->hasOne('App\Http\DB\Vendor', 'category_id', 'id');
-    // }
 }
