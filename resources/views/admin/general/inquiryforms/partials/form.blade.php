@@ -2,22 +2,9 @@
 <div class="col-md-6">
     <div class="row margin-bottom-5">
         <div class="form-group">
-            <div class="col-md-4"><label class="control-label">First Name:</label></div>
+            <div class="col-md-4"><label class="control-label">Name:</label></div>
             <div class="col-md-7">
                 <div style="margin-top: 10px;">{!! $record->first_name !!}</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clearfix"></div>
-
-<div class="col-md-6">
-    <div class="row margin-bottom-5">
-        <div class="form-group">
-            <div class="col-md-4"><label class="control-label">Last Name:</label></div>
-            <div class="col-md-7">
-                <div style="margin-top: 10px;">{!! $record->last_name !!}</div>
             </div>
         </div>
     </div>

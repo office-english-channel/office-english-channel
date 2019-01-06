@@ -1,6 +1,6 @@
 <!-- StyleSheets -->
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="{!! asset('public/frontend/img/favicon.ico') !!}" type="image/x-icon">
+<link rel="icon" href="{!! asset('public/frontend/img/favicon.ico') !!}" type="image/x-icon">
 <!-- Custom Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Material+Icons" rel="stylesheet">
 <!-- Bootstrap Core CSS -->

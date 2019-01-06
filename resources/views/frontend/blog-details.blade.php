@@ -93,7 +93,7 @@
                 <div class="blog-meta">
                   <p>
                     <?php $blog_publish_date = date('dS  M, Y',strtotime($blog_detail->publish_date));?>
-                    <span class="meta-date">{!! $blog_publish_date !!}| {!! $blog_detail->title !!} | </span>
+                    <span class="meta-date">{!! $blog_publish_date !!} | {!! $blog_detail->written_by   !!} </span>
                     <!-- <a href="#" class="meta-category read-more">23 Comments</a> -->
                   </p>
                 </div>
@@ -114,12 +114,10 @@
                             <i class="fa fa-share-alt"></i>
                             <div class="social-icons">
                                 <ul class="list-inline list-unstyled">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="google"><i class="fa fa-google"></i></a></li>
-                                    <li><a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="rss"><i class="fa fa-rss"></i></a></li>
+                                    <li><a href="{!! $setting_detail->facebook_url !!}" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{!! $setting_detail->twitter_url !!}" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{!! $setting_detail->google_plus_url !!}" class="google"><i class="fa fa-google"></i></a></li>
+                                    <li><a href="{!! $setting_detail->linkedin_url !!}" class="fa fa-linked-in"><i class="fa fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -184,7 +182,8 @@
                 <!-- / of leave-reply -->
                 <div class="contact-form">
                     <div class="row">
-                        <form class="text-left" id="contact_form">
+                        <form class="text-left" id="contact_form" action="{!! URL::to('contact-form')!!}">
+                        {{ csrf_field() }}
 
                             <div class="clearfix">
                                 <div class="form-group col-md-4 col-sm-6">

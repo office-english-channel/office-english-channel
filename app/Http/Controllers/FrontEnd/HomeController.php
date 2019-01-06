@@ -91,6 +91,8 @@ class HomeController extends Controller
             $data['index'] = '1';
             
             $data['blog_detail'] = Blog::where('status', 1)->with('cover')->where('slug', '=', $slug)->first();
+
+            $data['setting_detail'] = Setting::first();
             
             $data['meta_title'] = 'The English Channel | '.$data['blog_detail']->title;
 
@@ -157,6 +159,25 @@ class HomeController extends Controller
             //$mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
 
             // return \View::make('frontend.index', $data );
+        } catch (Exception $e) {
+
+        }
+    }
+
+    public function saveContactForm(Request $request)
+    {
+
+        try {
+
+            $trial_ielts_forms                            = new TrialIeltsForms;
+            $trial_ielts_forms->full_name                 = $request->full_name;
+            $trial_ielts_forms->email                     = $request->email;
+            $trial_ielts_forms->save();
+            
+            // return \View::make('frontend.trial-ielts', $data );
+            return Redirect::back();
+
+
         } catch (Exception $e) {
 
         }

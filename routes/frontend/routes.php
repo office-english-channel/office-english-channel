@@ -39,4 +39,9 @@ Route::post('/save-trial-ielts', [
     'as'    => 'common.trial-ielts',
     'uses'  => 'FrontEnd\HomeController@saveTrialIELTS'
 ]);
+
+Route::post('/save-contact-form', [
+    'as'    => 'common.contact-form',
+    'uses'  => 'FrontEnd\HomeController@saveContactForm'
+]);
 ?>
