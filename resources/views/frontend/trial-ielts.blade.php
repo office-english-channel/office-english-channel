@@ -116,14 +116,14 @@
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="module" value="Academic" checked> <span class="label-text"> <em class="inner-checkbox">Academic</em></span>
+                                  <input type="radio" name="module" value="0" checked> <span class="label-text"> <em class="inner-checkbox">Academic</em></span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="module" value="General Training"> <span class="label-text"> <em class="inner-checkbox">General Training</em> </span>
+                                  <input type="radio" name="module" value="1"> <span class="label-text"> <em class="inner-checkbox">General Training</em> </span>
                                 </label>
                               </div>
                             </li>
@@ -140,14 +140,14 @@
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="test_date" value="23_sep" checked> <span class="label-text"> <em class="inner-checkbox">23rd September 2018 (Sunday)</em></span>
+                                  <input type="radio" name="test_date" value="0" checked> <span class="label-text"> <em class="inner-checkbox">23rd September 2018 (Sunday)</em></span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="test_date" value="7_oct"> <span class="label-text"> <em class="inner-checkbox">7th October 2018 (Sunday)</em> </span>
+                                  <input type="radio" name="test_date" value="1"> <span class="label-text"> <em class="inner-checkbox">7th October 2018 (Sunday)</em> </span>
                                 </label>
                               </div>
                             </li>
@@ -164,14 +164,14 @@
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="exposure" value="Fresher" checked> <span class="label-text"> <em class="inner-checkbox">Fresher (in case you have never appeared for IELTS)</em></span>
+                                  <input type="radio" name="exposure" value="0" checked> <span class="label-text"> <em class="inner-checkbox">Fresher (in case you have never appeared for IELTS)</em></span>
                                 </label>
                               </div>
                             </li>
                             <li>
                               <div class="form-check">
                                 <label>
-                                  <input type="radio" name="exposure" value="Repeater"> <span class="label-text"> <em class="inner-checkbox">Repeater (in case you have appeared for IELTS atleast once.)</em> </span>
+                                  <input type="radio" name="exposure" value="1"> <span class="label-text"> <em class="inner-checkbox">Repeater (in case you have appeared for IELTS atleast once.)</em> </span>
                                 </label>
                               </div>
                             </li>
