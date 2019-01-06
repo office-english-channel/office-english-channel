@@ -93,60 +93,6 @@
                 </div>
               </div>
               @endforeach
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="achieve_main text-center">
-                  <div class="user_pr">
-                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user1.jpg') !!}" alt="user-img">
-                  </div>
-                  <div class="writen-section">
-                    <div class="inner-detail">
-                      <div class="title_main mt-15 mb-15">
-                        <h3 class="text-capitalize mb-0 pb-0">Jade Smith</h3>
-                        <em>@designation</em>
-                      </div>
-                      <div class="pera-detail">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="achieve_main text-center">
-                  <div class="user_pr">
-                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user2.jpg') !!}" alt="user-img">
-                  </div>
-                  <div class="writen-section">
-                    <div class="inner-detail">
-                      <div class="title_main mt-15 mb-15">
-                        <h3 class="text-capitalize mb-0 pb-0">ann lovefully</h3>
-                        <em>@designation</em>
-                      </div>
-                      <div class="pera-detail">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="achieve_main text-center">
-                  <div class="user_pr">
-                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user4.jpg') !!}" alt="user-img">
-                  </div>
-                  <div class="writen-section">
-                    <div class="inner-detail">
-                      <div class="title_main mt-15 mb-15">
-                        <h3 class="text-capitalize mb-0 pb-0">luisa smith</h3>
-                        <em>@designation</em>
-                      </div>
-                      <div class="pera-detail">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section> 

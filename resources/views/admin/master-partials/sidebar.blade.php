@@ -8,13 +8,6 @@
                 </a>
             </li>
 
-            <li class="nav-item @if(Request::segment(2)=='administrators') {!! 'active open' !!} @endif">
-                <a href="{!! URL::route('admin.administrators.index') !!}" class="nav-link nav-toggle">
-                    <i class="icon-diamond"></i>
-                    <span class="title">Administrators</span>
-                </a>
-            </li>
-
             <li class="nav-item @if(Request::segment(2)=='pages') {!! 'active open' !!} @endif">
                 <a href="{!! URL::route('admin.general.pages.index') !!}" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>

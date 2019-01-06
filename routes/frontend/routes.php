@@ -25,6 +25,10 @@ Route::get('/blogs', [
     'uses'  => 'FrontEnd\HomeController@blogs'
 ]);
 
+Route::get('/blogs/{slug}', [
+    'as'    => 'common.blog.details',
+    'uses'  => 'FrontEnd\HomeController@blogDetails'
+]);
 
 Route::get('/trial-ielts', [
     'as'    => 'common.trial-ielts',

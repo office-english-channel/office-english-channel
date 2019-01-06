@@ -83,7 +83,7 @@
         <div class="form-group">
             <div class="col-md-4"><label class="control-label">Summary:  </label></div>
             <div class="col-md-7">
-                {!! Form::textarea('summary', null, array('class' => 'form-control', 'placeholder' => 'Summary', 'id' => 'summary', 'maxlength' => '90', 'tabindex' => $index++)) !!}
+                {!! Form::textarea('summary', null, array('class' => 'form-control', 'placeholder' => 'Summary', 'id' => 'summary', 'maxlength' => '512', 'tabindex' => $index++)) !!}
             </div>
         </div>
     </div>

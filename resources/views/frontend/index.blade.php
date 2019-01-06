@@ -46,82 +46,24 @@
                   </p>
                 </div>
               </div>
+
               <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
-                  <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
-                    <img class="img-responsive w-100" src="https://via.placeholder.com/300/?text=theenglishchannel.com" alt="">
-                  </a>
-                </div>
+
+                @foreach($gallery_list as $gallery_list_val)
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30">
+                    
+                    @if($gallery_list_val->cover != '')
+                      <a href="{!! asset('public/frontend/img/no-image.png') !!}" data-lightbox="roadtrip">
+                        <img class="img-responsive w-100" src="{!! asset($gallery_list_val->cover->source) !!}" alt="{!! $gallery_list_val->title !!}">
+                      </a>
+                    @else
+                      <a href="https://via.placeholder.com/300/?text=theenglishchannel.com" data-lightbox="roadtrip">
+                        <img class="img-responsive w-100" src="{!! asset('public/frontend/img/no-image.png') !!}" alt="{!! $gallery_list_val->title !!}">
+                      </a>
+                    @endif
+                  </div>
+                @endforeach
+
               </div>
               <!--end of row-->
            </div>

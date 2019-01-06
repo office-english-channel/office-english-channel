@@ -111,7 +111,7 @@
         <div class="form-group">
             <div class="col-md-2"><label class="control-label">Description:  </label></div>
             <div class="col-md-10">
-                {!! Form::textarea('description', null, array('class' => 'form-control', 'placeholder' => 'Description', 'id' => 'description', 'maxlength' => '90', 'tabindex' => $index++)) !!}
+                {!! Form::textarea('description', null, array('class' => 'form-control', 'placeholder' => 'Description', 'id' => 'description', 'tabindex' => $index++)) !!}
             </div>
         </div>
     </div>

@@ -18,6 +18,8 @@ use Mail;
 use App\Http\DB\Students;
 
 use App\Http\DB\Page;
+use App\Http\DB\Blog;
+use App\Http\DB\Galleries;
 
 class HomeController extends Controller
 {
@@ -26,7 +28,9 @@ class HomeController extends Controller
         try {
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | Home';
+            $data['meta_title'] = 'The English Channel | Home';
+
+            $data['gallery_list'] = Galleries::where('status', 1)->with('cover')->get();
 
             return \View::make('frontend.index', $data );
         } catch (Exception $e) {
@@ -40,7 +44,7 @@ class HomeController extends Controller
             $data   = [];
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | CMS-Page';
+            $data['meta_title'] = 'The English Channel | CMS-Page';
 
             //$data['page']   = Page::where('slug', '=', $slug)->first();            
 
@@ -107,7 +111,7 @@ class HomeController extends Controller
         try {
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | Students';
+            $data['meta_title'] = 'The English Channel | Students';
             $data['students'] = Students::where('status', 1)->with('cover')->get();
 
             return \View::make('frontend.student', $data );
@@ -121,9 +125,29 @@ class HomeController extends Controller
         try {
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | Blogs';
+            $data['meta_title'] = 'The English Channel | Blogs';
 
+            $data['blog_list'] = Blog::where('status', 1)->with('cover')->get();
+ 
             return \View::make('frontend.blog', $data );
+        } catch (Exception $e) {
+
+        }
+    }
+
+    public function blogDetails(Request $request, $slug)
+    {
+        try {
+
+            $data = [];
+            $data['index'] = '1';
+            
+            $data['blog_detail'] = Blog::where('status', 1)->with('cover')->where('slug', '=', $slug)->first();
+            
+            $data['meta_title'] = 'The English Channel | '.$data['blog_detail']->title;
+
+ 
+            return \View::make('frontend.blog-details', $data );
         } catch (Exception $e) {
 
         }
@@ -134,7 +158,7 @@ class HomeController extends Controller
         try {
             $data = [];
             $data['index'] = '1';
-            $data['meta_title'] = 'Quickdone | Trial IELTS';
+            $data['meta_title'] = 'The English Channel | Trial IELTS';
 
             return \View::make('frontend.trial-ielts', $data );
         } catch (Exception $e) {
