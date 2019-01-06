@@ -14,6 +14,7 @@ use Sentinel;
 use App\Http\DB\SendMailModel;
 use App\Http\DB\Setting;
 use App\Http\DB\MailTemplates;
+use App\Http\DB\TrialIeltsForms;
 use Mail;
 use App\Http\DB\Students;
 
@@ -121,19 +122,17 @@ class HomeController extends Controller
 
         try {
 
-            echo "<pre>"; print_r($request->all()); exit;
-            // $data       = $request->all();
-
-            //$trial_ielts_forms                                  = new ServiceRequest;
-            $trial_ielts_forms->full_name                       = $request->full_name;
-            $trial_ielts_forms->email                           = $request->email;
-            $trial_ielts_forms->contact_number                  = $request->contact_number;
-            $trial_ielts_forms->module                          = $request->module;
-            $trial_ielts_forms->test_date                       = $request->test_date;
-            $trial_ielts_forms->exposure                        = $request->exposure;
-            $trial_ielts_forms->exam_date                       = $request->exam_date;
-            $trial_ielts_forms->reason_choosing_ielts_ans       = $request->reason_choosing_ielts_ans;
-            $trial_ielts_forms->payment_detail_contact          = $request->payment_detail_contact;
+            
+            $trial_ielts_forms                            = new TrialIeltsForms;
+            $trial_ielts_forms->full_name                 = $request->full_name;
+            $trial_ielts_forms->email                     = $request->email;
+            $trial_ielts_forms->contact_number            = $request->contact_number;
+            $trial_ielts_forms->module                    = $request->module;
+            $trial_ielts_forms->test_date                 = $request->test_date;
+            $trial_ielts_forms->exposure                  = $request->exposure;
+            $trial_ielts_forms->exam_date                 = $request->exam_date;
+            $trial_ielts_forms->reason_choosing_ielts_ans = $request->reason_choosing_ielts_ans;
+            $trial_ielts_forms->payment_detail_contact    = implode("###",$request->payment_detail_contact);
             $trial_ielts_forms->save();
 
 
@@ -159,6 +158,7 @@ class HomeController extends Controller
             //$mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
 
             // return \View::make('frontend.index', $data );
+            return redirect('trial-ielts');
         } catch (Exception $e) {
 
         }
