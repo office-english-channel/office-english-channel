@@ -15,6 +15,7 @@ use App\Http\DB\SendMailModel;
 use App\Http\DB\Setting;
 use App\Http\DB\MailTemplates;
 use Mail;
+use App\Http\DB\Students;
 
 use App\Http\DB\Page;
 
@@ -107,6 +108,7 @@ class HomeController extends Controller
             $data = [];
             $data['index'] = '1';
             $data['meta_title'] = 'Quickdone | Students';
+            $data['students'] = Students::where('status', 1)->with('cover')->get();
 
             return \View::make('frontend.student', $data );
         } catch (Exception $e) {

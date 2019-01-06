@@ -23,7 +23,7 @@
                             <span class="caption-subject font-red sbold uppercase">{!! $title !!}</span>
                         </div>
                         <div class="actions">
-                            <a href="{!! URL::route('admin.categories.index') !!}" class="btn green-turquoise btn-outline">
+                            <a href="{!! URL::route('admin.students.index') !!}" class="btn green-turquoise btn-outline">
                                 Back 
                                 <i class="fa fa-arrow-right"></i>
                             </a>

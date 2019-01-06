@@ -73,24 +73,26 @@
         <section class="achieve">
           <div class="container">
             <div class="row">
+              @foreach($students as $student)
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="achieve_main text-center">
                   <div class="user_pr">
-                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{!! asset('public/frontend/img/user3.jpg') !!}" alt="user-img">
+                    <img class="w-100 img-thumbnail img-circle shadow-round" src="{{ $student->cover->source }}" alt="user-img">
                   </div>
                   <div class="writen-section">
                     <div class="inner-detail">
                       <div class="title_main mt-15 mb-15">
-                        <h3 class="text-capitalize mb-0 pb-0">Adam jordan</h3>
-                        <em>@designation</em>
+                        <h3 class="text-capitalize mb-0 pb-0">{!! $student->first_name !!} {!! $student->last_name !!}</h3>
+                        <em>{!! $student->course !!}</em>
                       </div>
                       <div class="pera-detail">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit arcu felis, vel efficitur lectus imperdiet ut. </p>
+                        <p>{!! $student->summary !!}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              @endforeach
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="achieve_main text-center">
                   <div class="user_pr">
