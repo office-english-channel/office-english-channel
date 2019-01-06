@@ -139,22 +139,22 @@ class HomeController extends Controller
 
             
             // dd($data['subCategory']);
-            /*$params = [ '{vendor}'           => @($data['vendor']) ? $data['vendor']->vendor_name : 0,
-                        '{category}'         => @($data['category']) ? $data['category']->category_name : 0,
-                        '{sub_category}'     => @($data['subCategory']) ? $data['subCategory']->sub_category_name : 0,
-                        '{first_name}'       => $request->first_name,
-                        '{last_name}'        => $request->last_name,
-                        '{email}'            => $request->email,
-                        '{mobile_no}'        => $request->mobile_no,
-                        '{address_1}'        => $request->address_1,
-                        '{comments}'         => $request->comments
+            $params = [ '{full_name}'                 => $request->full_name,
+                        '{email}'                     => $request->email,
+                        '{contact_number}'            => $request->contact_number,
+                        //'{module}'                    => $request->module,
+                        //'{test_date}'                 => $request->test_date,
+                        //'{exposure}'                  => $request->exposure,
+                        '{exam_date}'                 => $request->exam_date,
+                        '{reason_choosing_ielts_ans}' => $request->reason_choosing_ielts_ans,
+                        '{payment_detail_contact}'    => implode(", ",$request->payment_detail_contact),
+                        
+                      ];
 
-                      ];*/
-
-          //$clientMail = $request->email;  //client inquery mail...
+            $userMail = $request->email;  //client inquery mail...
 
             // $mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, 'bhavin.codefarm@outlook.com' );
-            //$mail = SendMailModel::dispatchMail('vender_inquiry_mail_template', $params, $clientMail );
+            $mail = SendMailModel::dispatchMail('trial_ielts_mail_template', $params, $userMail );
 
             //$mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
 
@@ -180,6 +180,17 @@ class HomeController extends Controller
             $inquiry_form->save();
             
             // return \View::make('frontend.trial-ielts', $data );
+
+            $params = [ '{name}'            => $request->name,
+                        '{email}'           => $request->email,
+                        '{contact_number}'  => $request->contact_number,
+                        '{subject}'         => $request->subject,
+                        '{comments}'        => $request->comments,                        
+                      ];
+
+            $userMail = $request->email;
+            $mail = SendMailModel::dispatchMail('contact_mail_template', $params, $userMail );
+
             return Redirect::back();
 
 

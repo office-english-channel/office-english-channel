@@ -84,7 +84,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group mb-2">
                           <h3 class="title-form">Full Name <abbr class="text-denger" title="title">*</abbr></h3>
-                          <input id="input-name" required="" name="full_name" type="text" placeholder="Your Answer" required="" class="form-control input-md">
+                          <input id="input-name" required="" name="full_name" type="text" placeholder="Your Name" required="" class="form-control input-md">
                           <div class="in_error">  </div>
                         </div>
                       </div>
@@ -94,7 +94,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group mb-2">
                           <h3 class="title-form">Email <abbr class="text-denger" title="title">*</abbr></h3>
-                          <input id="email" name="email"  required="" type="email" placeholder="Your Answer" required="" class="form-control input-md">
+                          <input id="email" name="email"  required="" type="email" placeholder="Your Email" required="" class="form-control input-md">
                         </div>
                       </div>
                       <div class="col-xs-12 col-sm-12 col-md-6"></div>
@@ -103,7 +103,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group mb-2">
                           <h3 class="title-form">Contact Number <abbr class="text-denger" title="title">*</abbr></h3>
-                          <input id="contact_number"  required="" name="contact_number" type="text" placeholder="Your Answer" required="" class="form-control input-md">
+                          <input id="contact_number"  required="" name="contact_number" type="text" placeholder="Your Contact Number" required="" class="form-control input-md">
                         </div>
                       </div>
                       <div class="col-xs-12 col-sm-12 col-md-6"></div>
