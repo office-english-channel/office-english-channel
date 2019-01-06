@@ -1,7 +1,7 @@
 <?php
 
 	return [
-			'meta_title'				=> 'Add Administrator | Quickdone',
+			'meta_title'				=> 'Add Administrator | The English Channel',
 			'title'						=> 'Add New Administrator', 
 
 			'breadcrumb_home_lbl'		=> 'Home', 

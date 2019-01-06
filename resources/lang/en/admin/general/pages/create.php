@@ -1,7 +1,7 @@
 <?php
 
 	return [
-			'meta_title'			=> 'Add Page | MyCityMyLove',
+			'meta_title'			=> 'Add Page | The English Channel',
 			'title'					=> 'Add New Page', 
 
 			'breadcrumb_home_lbl'	=> 'Home', 

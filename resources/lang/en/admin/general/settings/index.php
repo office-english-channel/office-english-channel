@@ -1,7 +1,7 @@
 <?php 
 
 	return [
-			'meta_title'			=> 'Settings List | Quickdone',
+			'meta_title'			=> 'Settings List | The English Channel',
 			'title'					=> 'Settings List',
 			
 			'breadcrumb_home_lbl'	=> 'Home', 

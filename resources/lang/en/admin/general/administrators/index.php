@@ -1,7 +1,7 @@
 <?php 
 
 	return [
-			'meta_title'			=> 'Administrators List | Quickdone',
+			'meta_title'			=> 'Administrators List | The English Channel',
 			'title'					=> 'Administrators List',
 			
 			'breadcrumb_home_lbl'	=> 'Home', 

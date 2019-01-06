@@ -8,12 +8,12 @@
                 </a>
             </li>
 
-            <li class="nav-item @if(Request::segment(2)=='pages') {!! 'active open' !!} @endif">
+            <!-- <li class="nav-item @if(Request::segment(2)=='pages') {!! 'active open' !!} @endif">
                 <a href="{!! URL::route('admin.general.pages.index') !!}" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
                     <span class="title">Pages</span>
                 </a>
-            </li>
+            </li> -->
 
             <li class="nav-item @if(Request::segment(2)=='galleries') {!! 'active open' !!} @endif">
                 <a href="{!! URL::route('admin.galleries.index') !!}" class="nav-link nav-toggle">
@@ -40,6 +40,13 @@
                 <a href="{!! URL::route('admin.students.index') !!}" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
                     <span class="title">Students</span>
+                </a>
+            </li>
+
+            <li class="nav-item @if(Request::segment(2)=='trial-ieltsforms') {!! 'active open' !!} @endif">
+                <a href="{!! URL::route('admin.trialieltsforms.index') !!}" class="nav-link nav-toggle">
+                    <i class="icon-diamond"></i>
+                    <span class="title">Trial Ielts Forms</span>
                 </a>
             </li>
 

@@ -234,6 +234,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'uses'  => 'Admin\InquiryFormsController@getList'
     ]);
 
+    //routes for inquiryforms 
+    Route::get('/trial-ieltsforms/list', [
+            'as'    => 'admin.trialieltsforms.index',
+            'uses'  => 'Admin\TrialIeltsFormsController@index'
+    ]);
+    Route::get('/trial-ieltsforms/show/{id}', [
+            'as'    => 'admin.trialieltsforms.show',
+            'uses'  => 'Admin\TrialIeltsFormsController@show'
+    ]);
+    Route::get('/trial-ieltsforms/delete/{id}', [
+            'as'    => 'admin.trialieltsforms.delete',
+            'uses'  => 'Admin\TrialIeltsFormsController@destroy'
+    ]);
+    Route::get('/trial-ieltsforms/get-list', [
+            'as'    => 'admin.trialieltsforms.getlist',
+            'uses'  => 'Admin\TrialIeltsFormsController@getList'
+    ]);
+
     //Pages related routes
     Route::get('/pages/list', [
             'as'    => 'admin.general.pages.index',

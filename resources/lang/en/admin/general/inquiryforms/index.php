@@ -1,7 +1,7 @@
 <?php 
 
 	return [
-			'meta_title'			=> 'Inquiry-Forms List | Quickdone',
+			'meta_title'			=> 'Inquiry-Forms List | The English Channel',
 			'title'					=> 'Inquiry-Forms List',
 			
 			'breadcrumb_home_lbl'	=> 'Home', 
