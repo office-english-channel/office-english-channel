@@ -1,7 +1,9 @@
 @extends('frontend.master')
 
 @section('pagelevelcss')
-
+<style type="text/css">
+  .aboutus-text p{color: #7f7e7e !important; font-size: 1.15em !important;line-height: 1.5em !important;font-weight: 400 !important;margin: 0 auto !important; margin-bottom: 20px !important; text-align: justify !important;}
+</style>
 @stop
 
 @section('content')
@@ -17,13 +19,13 @@
                <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-1"></div>
                 <!-- /col-xs-12 col-sm-12 col-md-2 -->
-                  <div class="col-xs-12 col-sm-12 col-md-10 algn-center">
+                  <div class="col-xs-12 col-sm-12 col-md-10 algn-center aboutus-text">
                     <h3 hidden>About The Company</h3>
                      <h2 class="und-line"> About</h2>
                      @if($page_content->about_textarea != '')
-                        <p class="head nw-width mb-20 text-justify">
+                        
                           {!! $page_content->about_textarea !!}
-                        </p>
+                        
                       @endif
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-1"></div>
