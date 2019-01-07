@@ -301,6 +301,9 @@
                     },
                     "contact_me_via[]" : {
                       required    : true
+                    },
+                    "payment_detail_contact[]" : {
+                      required    : true
                     }
                 },
                 messages : {
@@ -317,6 +320,9 @@
                     },
                     "contact_me_via[]" : {
                       required    : "Contact me via field is required."
+                    },
+                    "payment_detail_contact[]" : {
+                      required    : "Payment detail field is required."
                     }
                 },
                 errorPlacement: function(error, element) {
@@ -336,6 +342,5 @@
                  }
             });
         });
-
     </script>
 @stop

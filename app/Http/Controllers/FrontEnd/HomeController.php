@@ -123,7 +123,7 @@ class HomeController extends Controller
 
         try {
 
-            
+            //echo "<pre>"; print_r($request->all()); exit;
             $trial_ielts_forms                            = new TrialIeltsForms;
             $trial_ielts_forms->full_name                 = $request->full_name;
             $trial_ielts_forms->email                     = $request->email;
@@ -136,16 +136,32 @@ class HomeController extends Controller
             $trial_ielts_forms->payment_detail_contact    = implode("###",$request->payment_detail_contact);
             $trial_ielts_forms->save();
 
+            $module = 'Academic';
+            if($request->module == 1)
+            {
+                $module = 'General Training';
+            }
 
-            
+            $test_date = '23rd September 2018 (Sunday)';
+            if($request->test_date == 1)
+            {
+                $test_date = '7th October 2018 (Sunday)';
+            }
+
+            $exposure = 'Fresher (in case you have never appeared for IELTS)';
+            if($request->exposure == 1)
+            {
+                $exposure = 'Repeater (in case you have appeared for IELTS atleast once.)';
+            }
+
             // dd($data['subCategory']);
             $params = [ '{full_name}'                 => $request->full_name,
                         '{email}'                     => $request->email,
                         '{contact_number}'            => $request->contact_number,
-                        //'{module}'                    => $request->module,
-                        //'{test_date}'                 => $request->test_date,
-                        //'{exposure}'                  => $request->exposure,
-                        '{exam_date}'                 => $request->exam_date,
+                        '{module}'                    => $module,
+                        '{test_date}'                 => $test_date,
+                        '{exposure}'                  => $exposure,
+                        '{exam_date}'                 =>  date('dS  M, Y',strtotime($request->exam_date)),
                         '{reason_choosing_ielts_ans}' => $request->reason_choosing_ielts_ans,
                         '{payment_detail_contact}'    => implode(", ",$request->payment_detail_contact),
                         
@@ -183,7 +199,6 @@ class HomeController extends Controller
 
             $params = [ '{name}'            => $request->name,
                         '{email}'           => $request->email,
-                        '{contact_number}'  => $request->contact_number,
                         '{subject}'         => $request->subject,
                         '{comments}'        => $request->comments,                        
                       ];
