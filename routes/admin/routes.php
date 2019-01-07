@@ -281,5 +281,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
             'as'    => 'admin.general.pages.getlist',
             'uses'  => 'Admin\General\PagesController@getList'
     ]);
+
+    //routes for page content 
+    Route::get('/page-content/edit/{id}', [
+            'as'    => 'admin.pagecontent.edit',
+            'uses'  => 'Admin\PageContentController@edit'
+    ]);
+    Route::post('/page-content/update', [
+            'as'    => 'admin.pagecontent.update',
+            'uses'  => 'Admin\PageContentController@update'
+    ]);
 });
 ?>

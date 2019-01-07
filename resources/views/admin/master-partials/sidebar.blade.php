@@ -63,6 +63,13 @@
                     <span class="title">General Settings</span>
                 </a>
             </li>
+
+            <li class="nav-item @if(Request::segment(2)=='page-content') {!! 'active open' !!} @endif">
+                <a href="{!! URL::route('admin.pagecontent.edit', 1) !!}" class="nav-link nav-toggle">
+                    <i class="icon-diamond"></i>
+                    <span class="title">Page Content</span>
+                </a>
+            </li>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>
