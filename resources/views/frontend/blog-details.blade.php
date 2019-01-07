@@ -61,8 +61,12 @@
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="title-blog">
-                  <h1>Blog Standard Single Post</h1>
-                  <p>{!! $blog_detail->title !!}</p>
+                  @if($page_content->blog_detail_text_1 != '')
+                    <h1>{!! $page_content->blog_detail_text_1 !!}</h1>
+                  @endif
+                  @if($page_content->blog_detail_text_2 != '')
+                    <p>{!! $page_content->blog_detail_text_2 !!}</p>
+                  @endif
                 </div>
                 <!-- / of title-blog -->
               </div>

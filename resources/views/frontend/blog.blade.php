@@ -59,8 +59,12 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                   <div class="title-blog">
-                    <h1>Recent Blog </h1>
-                    <p>Fusce imperdiet, ex finibus semper ultricies, urna elit semper nibh, in ullamcorper nibh eros tincidunt eros. </p>
+                    @if($page_content->blog_text_1 != '')
+                      <h1>{!! $page_content->blog_text_1 !!}</h1>
+                    @endif
+                    @if($page_content->blog_text_2 != '')
+                      <p>{!! $page_content->blog_text_2 !!}</p>
+                    @endif
                   </div>
                   <!-- / of title-blog -->
                 </div>

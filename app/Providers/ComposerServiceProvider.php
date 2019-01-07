@@ -19,6 +19,21 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer(
             'frontend.index', 'App\Http\Composers\SettingDataComposer'
         );
+        view()->composer(
+            'frontend.index', 'App\Http\Composers\PageContentComposer'
+        );
+        view()->composer(
+            'frontend.blog', 'App\Http\Composers\PageContentComposer'
+        );
+        view()->composer(
+            'frontend.blog-details', 'App\Http\Composers\PageContentComposer'
+        );
+        view()->composer(
+            'frontend.student', 'App\Http\Composers\PageContentComposer'
+        );
+        view()->composer(
+            'frontend.trial-ielts', 'App\Http\Composers\PageContentComposer'
+        );
     }
 
     /**

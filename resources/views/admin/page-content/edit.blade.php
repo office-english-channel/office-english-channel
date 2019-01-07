@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="portlet-body">
-                        {!! Form::model($record, array('route' => array('admin.pagecontent.update') , 'class' => 'form-horizontal', 'id' => 'add_settings', 'files' => true))  !!}
+                        {!! Form::model($record, array('route' => array('admin.pagecontent.update') , 'class' => 'form-horizontal', 'id' => 'add_page_content', 'files' => true))  !!}
                             {!! Form::hidden('id') !!}
                             @include($view.'partials.form')
                         {!! Form::close() !!}
@@ -45,9 +45,9 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
-            var form1 = $('#add_settings');
+            var form1 = $('#add_page_content');
             var error1 = $('.alert-danger', form1);
-            $("#add_settings").validate({
+            $("#add_page_content").validate({
                 errorElement: 'span', //default input error message container
                 errorClass: 'help-block help-block-error', // default input error message class
                 invalidHandler: function (event, validator) { //display error alert on form submit
@@ -67,15 +67,13 @@
                     .closest('.form-group').removeClass('has-error'); // set success class to the control group
                 },
                 rules : {
-                    admin_email   : {
-                        required    : true,
+                    ielts_contact_email   : {
                         email : true,
                         maxlength : 145
                     }
                 },
                 messages : {
-                    admin_email  : {
-                        required    : 'Email is required field.',
+                    ielts_contact_email  : {
                         email : 'Invalid Email.',
                         maxlength : 'Max 145 characters allowed.'
                     }
@@ -83,7 +81,7 @@
             });
 
         //code for submit data on enter form controls
-            $('#add_settings').find('input').keypress(function(e) {
+            $('#add_page_content').find('input').keypress(function(e) {
                  if(e.which == 10 || e.which == 13) {
                       $("#submit_btn").trigger('click');
                  }

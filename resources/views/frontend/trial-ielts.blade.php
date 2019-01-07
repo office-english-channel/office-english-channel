@@ -67,15 +67,23 @@
                   <div class="notes-title">
                     <h1 class="mb-1">Trial IELTS</h1>
                     <ul class="list-unstyled mb-1">
-                      <li class="mb-5">Dates : September 23rd, 2018 and October 7th, 2018</li>
-                      <li>Timings : 10.00am to 4.00pm</li>
+                      @if($page_content->ielts_date != '')
+                        <li class="mb-5">Dates : {!! $page_content->ielts_date !!} </li>
+                      @endif
+                      @if($page_content->ielts_time != '')
+                        <li>Timings : {!! $page_content->ielts_time !!}</li>
+                      @endif
                     </ul>
-                    <address>
-                      Address: The English Channel, 4th Floor, "SEWA Building", Opp Karnavati Hospital, Ellisbridge, Ahmedabad, Gujarat 380006.
-                    </address>
+                    @if($page_content->ielts_address != '')
+                      <address>
+                        Address: {!! $page_content->ielts_address !!}
+                      </address>
+                    @endif
                     <ul class="list-unstyled mb-2">
-                      <li class="mb-5">Contact us at 90 811 81 777 or Email us at <a href="mailto:register@theenglishchannel.in"> register@theenglishchannel.in</a> </li>
-                      <li>Book Your Seat. (Limited to 20 seats only)</li>
+                      <li class="mb-5">@if($page_content->ielts_contact_number != '') Contact us at {!! $page_content->ielts_contact_number !!} @endif @if($page_content->ielts_contact_email != '') or Email us at <a href="mailto:{!! $page_content->ielts_contact_email !!}"> {!! $page_content->ielts_contact_email !!}</a>@endif </li>
+                      @if($page_content->ielts_book_seat != '')
+                        <li>Book Your Seat. {!! $page_content->ielts_book_seat !!}</li>
+                      @endif
                     </ul>
                   </div>
                   <form class="reletive" action="{!! URL::to('save-trial-ielts')!!}" method="post" id="trial_ielts">

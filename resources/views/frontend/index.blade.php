@@ -20,13 +20,11 @@
                   <div class="col-xs-12 col-sm-12 col-md-10 algn-center">
                     <h3 hidden>About The Company</h3>
                      <h2 class="und-line"> About</h2>
-                     <p class="head nw-width mb-20 text-justify">
-                       When we realised that Indian youth is frantically looking for the right exposure to gain command over English, we knew what we had to do. We turned ourselves into the channel to bridge the gap; you just have to tune in! Today English is one of the most important tools for economic, academic and social growth. This preference for English all over the world is due to many reasons; first one being the ease with which it can be learnt.
-                      </p>
-                      <p class="head nw-width text-justify">
-                        Yet, Indian youth struggles with it because of the numerous myths surrounding the process of learning. Some of these like ‘Grammar before Language’ or ‘Perfection before Communication’ are strongly challenged here at The English Channel (TEC). In lieu, we share some of the most efficient ways of getting a hang of the language in our experience. We also recognise that like any other language, English too cannot be taught, only learnt! However, what is needed for learning is the kind of exposure that supports growth and provides enough motivation. We swear by making TEC that space. All TEC campuses have been designed to fulfil this mission-
-                        Creating an environment that allows individuals to comfortably gain confidence in the use of English, eventually leading them to achieve all their growth goals We guarantee whoever puts their confidence in TEC is sure to be more confident about their skills in English!
-                     </p>
+                     @if($page_content->about_textarea != '')
+                        <p class="head nw-width mb-20 text-justify">
+                          {!! $page_content->about_textarea !!}
+                        </p>
+                      @endif
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-1"></div>
                 <!-- /col-xs-12 col-sm-12 col-md-2 -->
@@ -41,9 +39,11 @@
               <div class="row mb-2">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                   <h2 class="und-line">Gallery</h2>
-                  <p class="head">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
+                  @if($page_content->gallery_text != '')
+                    <p class="head">
+                      {!! $page_content->gallery_text !!}
+                    </p>
+                  @endif
                 </div>
               </div>
 
@@ -75,9 +75,11 @@
              <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                    <h2 class="und-line">Contact Us</h2>
-                   <p class="head">
-                     We have two campuses here in Ahmedabad. Feel free to contact us.
-                   </p>
+                    @if($page_content->contactus_text != '')
+                     <p class="head">
+                       {!! $page_content->contactus_text !!}
+                     </p>
+                    @endif
                 </div>
              </div>
              <!--end of row-->
