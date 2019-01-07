@@ -124,7 +124,7 @@
         <button type="submit" class="btn green-jungle btn-outline btn-circle" tabindex="{!! $index++ !!}" id="submit_btn">
             <i class="fa fa-save"></i> Save
         </button>
-        <a href="{!! URL::route('admin.students.index') !!}" class="btn dark btn-outline btn-circle" tabindex="{!! $index++ !!}">
+        <a href="{!! URL::route('admin.blogs.index') !!}" class="btn dark btn-outline btn-circle" tabindex="{!! $index++ !!}">
             <i class="fa fa-times"></i> Cancel
         </a>
     </div>

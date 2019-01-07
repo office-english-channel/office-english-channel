@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Mail;
 
 use App\Http\DB\ServiceRequest;
-
+ 
 class SendMailModel extends Model
 {
 

@@ -44,11 +44,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <img src="{!! asset('public/adminpanel/layouts/layout5/img/avatar1.jpg') !!}" alt=""> </button>
                                 <ul class="dropdown-menu-v2" role="menu">
                                     <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
-                                    </li>
-                                    <li>
-                                        <a href="page_user_login_1.html">
+                                        <a href="#">
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>

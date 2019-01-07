@@ -15,7 +15,7 @@
         <div class="form-group">
             <div class="col-md-4"><label class="control-label">Contact Address: </label></div>
             <div class="col-md-7">
-                {!! Form::text('contact_address', null, array('class' => 'form-control', 'placeholder' => 'Contact Address' , 'id' => 'contact_address', 'maxlength' => '90', 'tabindex' => $index++)) !!}
+                {!! Form::text('contact_address', null, array('class' => 'form-control', 'placeholder' => 'Contact Address' , 'id' => 'contact_address', 'maxlength' => '255', 'tabindex' => $index++)) !!}
             </div>
         </div>
     </div>
