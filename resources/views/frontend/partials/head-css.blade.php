@@ -13,7 +13,7 @@
 <!-- Template CSS -->
 <link rel="stylesheet" href="{!! asset('public/frontend/lib/lightbox/dist/css/lightbox.min.css') !!}">
 <link rel="stylesheet" href="{!! asset('public/frontend/css/styles.css') !!}">
-
+<link href="{{ asset('public/adminpanel/global/plugins/bootstrap-toastr/toastr.min.css')}}" rel="stylesheet" type="text/css"/>
 <!-- JavaScripts -->
 <script src="{!! asset('public/frontend/lib/jquery/jquery-3.2.1.min.js') !!}"></script>
 <!-- <script type="text/javascript" src="{!! asset('public/frontend/js/jquery.js') !!}"></script> -->

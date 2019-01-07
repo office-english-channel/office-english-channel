@@ -8,6 +8,7 @@
 <script src="{!! asset('public/frontend/lib/jquery/isotope.pkgd.min.js') !!}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 <script src="{!! asset('public/frontend/lib/lightbox/dist/js/lightbox.min.js') !!}"></script>
+<script src="{{ asset('public/adminpanel/global/plugins/bootstrap-toastr/toastr.min.js') }}" type="text/javascript"></script>
 <!-- Template JavaScript -->
 <script src="{!! asset('public/frontend/js/scripts.min.js') !!}"></script>
 <script type="text/javascript">
@@ -32,5 +33,20 @@ function myMap() {
       map: map
     });
 }
+
+jQuery(document).ready(function () {
+    displayNotifications();
+});
+
+function displayNotifications(){
+    toastr.options.closeButton = true;
+    toastr.options.timeOut = 10000;
+    if(jQuery('#flashsuccess').length != 0){
+        toastr.success(jQuery('#flashsuccess').html())
+    } else if(jQuery('#flasherror').length != 0){
+        toastr.error(jQuery('#flasherror').html())
+    }
+}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRAatMB3kzBlZs-jYbNhnqRaPmdj98hkQ&callback=myMap"></script>

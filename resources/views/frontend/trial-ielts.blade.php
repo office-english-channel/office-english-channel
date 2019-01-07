@@ -5,7 +5,6 @@
 @stop
 
 @section('content')
-
     <div class="nav-container affix" id="mainMenu">
          <!--start mobile navigation-->
          <div class="nav nav-sm visible-xs">

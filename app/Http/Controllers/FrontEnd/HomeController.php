@@ -175,7 +175,7 @@ class HomeController extends Controller
             //$mail = SendMailModel::dispatchMailClient('client_replay_inquiry_mail_template', $params, $clientMail );
 
             // return \View::make('frontend.index', $data );
-            return redirect('trial-ielts');
+            return redirect('trial-ielts')->with('success', 'Your trial IELTS inquery send successfully');;
         } catch (Exception $e) {
 
         }
@@ -206,7 +206,7 @@ class HomeController extends Controller
             $userMail = $request->email;
             $mail = SendMailModel::dispatchMail('contact_mail_template', $params, $userMail );
 
-            return Redirect::back();
+            return Redirect::back()->with('success', 'Your contact inquery send successfully');
 
 
         } catch (Exception $e) {

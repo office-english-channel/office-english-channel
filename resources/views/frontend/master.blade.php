@@ -7,7 +7,11 @@
 </head>
  
 <body id="page-top">
-
+	@if(!empty(Session::get('success')))
+    <div class="alert alert-success" id="flashsuccess" style="display: none;">
+        <strong>Success!</strong> {!! Session::get('success') !!}<br><br>
+    </div>
+    @endif
     @include("frontend.partials.preloader")
     
             @yield('content')
